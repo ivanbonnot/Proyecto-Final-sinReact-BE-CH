@@ -1,5 +1,5 @@
 const { productModel, cartModel, userModel, chatModel } = require("../models/mongoDBModels")
-
+const logger = require('../../log/log4js')
 
 class mongoDBDAO {
 
@@ -50,10 +50,19 @@ class mongoDBDAO {
 
     //___CART___//
 
-    saveCart = async (cartToAdd) => {
-        const cart = new cartModel(cartToAdd);
-        return await cart.save();
-    };
+    async newCart( userEmail, adress ) {
+        try {
+          const newCart = new cartModel({ 
+            userEmail: userEmail,
+            products: [],
+            adress: adress
+          })
+          return await newCart.save()
+
+        } catch (error) {
+          logger.error(error)
+        }
+      }
 
     getCarts = async () => await cartModel.find({});
 
@@ -61,7 +70,7 @@ class mongoDBDAO {
 
     deleteCart = async (id) => await cartModel.deleteOne({ _id: id });
 
-    addProductInCart = async (id, id_prod) => {
+    addProductToCart = async (id, id_prod) => {
         const cart = await this.getCartById(id);
 
         const isInCart = () =>

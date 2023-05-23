@@ -3,27 +3,26 @@ const bcrypt = require('bcrypt');
 const { Schema, model } = mongoose
 
 
-
 const cartSchema = new Schema({
-    timestamp: { type: Number, require: true },
-    products: { type: Array, required: true }
+    userEmail: { type: String, required: true },
+    timestamp: { type: Date, default: Date.now },
+    products: { type: Array, required: true },
+    adress: { type: String, required: true },
 })
 
-
+const orderSchema = new Schema({
+    products: { type: Array, required: true },
+    orderNumber: { type: Number, required: true },
+    timestamp: { type: Date, default: Date.now },
+    status: { type: String, default: 'Generada' },
+    userEmail: { type: String, required: true }
+})
 
 const chatSchema = new Schema({
-    author: {
-        email: { type: String, require: true },
-        name: { type: String, require: true },
-        lastname: { type: String, require: true },
-        age: { type: Number, require: true },
-        nickname: { type: String, require: true },
-        avatar: { type: String, require: true },
-    },
+    name: { type: String, require: true },
     text: { type: String, require: true },
     date: { type: Date, require: true },
 });
-
 
 
 const productschema = new Schema({
@@ -35,7 +34,6 @@ const productschema = new Schema({
     code: { type: String },
     price: { type: Number }
 });
-
 
 
 const userSchema = new Schema({
@@ -76,9 +74,10 @@ userSchema.pre('save', function (next) {
 });
 
 
-const userModel = model('User', userSchema)
-const productModel = model('products', productschema)
-const chatModel = model('Chat', chatSchema);
 const cartModel = model('Cart', cartSchema)
+const orderModel = model('Order', orderSchema)
+const chatModel = model('Chat', chatSchema);
+const productModel = model('Products', productschema)
+const userModel = model('User', userSchema)
 
-module.exports = {cartModel, chatModel, productModel, userModel}
+module.exports = { orderModel, cartModel, chatModel, productModel, userModel }

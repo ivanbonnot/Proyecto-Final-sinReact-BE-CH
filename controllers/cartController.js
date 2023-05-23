@@ -7,12 +7,9 @@ const getCartController = ( username ) => getCartDto( username )
 
 const addProductToCartController = ( itemId, number, username ) => addProductToCartDto( itemId, number, username )
 
-const delProductFromCartController = ( itemId, username ) =>  delProductFromCartDto( itemId, username )
+const deleteProductFromCartController = ( itemId, username ) =>  delProductFromCartDto( itemId, username )
 
-const delCartController = ( username ) => {
-  const response =  delCartDto( username )
-  return response
-}
+const deleteCartController = ( username ) => delCartDto( username )
 
 const newOrderController = ( username ) => {
   const cart =  getCartDto( username )
@@ -28,12 +25,11 @@ const newOrderController = ( username ) => {
     }
   })
   const order = {
-    username: username,
-    sendaddress: cart.sendaddress,
+    userEmail: cart.userEmail,
     products: orderArray
   }
   const responseOrder =  newOrderDto( order )
-  const responseDelete =  delCartDto( username )
+  const responseDelete =  deleteCartDto( userEmail )
   sendEmail({
     from: 'Administrador',
     to: adminmail,
@@ -47,8 +43,8 @@ const newOrderController = ( username ) => {
           <td>${username}</td>
         </tr>
         <tr>
-          <td>Send address</td>
-          <td>${cart.sendaddress}</td>
+          <td>Email del usuario</td>
+          <td>${cart.userEmail}</td>
         </tr>
         <tr>
           <td>Products</td>
@@ -61,4 +57,4 @@ const newOrderController = ( username ) => {
 }
 
 
-module.exports = { getCartController, addProductToCartController, delProductFromCartController, delCartController, newOrderController }
+module.exports = { getCartController, addProductToCartController, deleteProductFromCartController, deleteCartController, newOrderController }

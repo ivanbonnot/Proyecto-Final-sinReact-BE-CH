@@ -2,36 +2,19 @@ const factoryDAO = require('../DAO/factory')
 
 const products = factoryDAO()
 
-const addNewProductDTO = async( prod ) => {
-  console.log( prod )
-  await products.saveProduct( prod )
-  return 
-}
 
-const getAllProductsDTO = async() => {
-  const allProducts = await products.getProducts()
-  return allProducts
-}
+const addNewProductDTO = async( prod ) => await products.saveProduct( prod )
 
-const getProductByIdDTO = async( id ) => {
-  const productById = await products.getProductById( id )
-  return productById
-}
+const getAllProductsDTO = async() => await products.getProducts()
 
-const updateProductDTO = async( id, prodToUpdate ) => {
-  const productUpd = await products.updateProduct( id, prodToUpdate )
-  return productUpd
-}
+const getProductByIdDTO = async( id ) => await products.getProductById( id )
 
-const deleteProductDTO = async( id ) => {
-  await products.deleteProduct( id )
-  return 
-}
+const updateProductDTO = async( id, prodToUpdate ) => await products.updateProduct( id, prodToUpdate )
 
-const deleteAllProductsDTO = async() => {
-  await products.deleteAllProducts()
-  return 
-}
+const deleteProductDTO = async( id ) => await products.deleteProduct( id )
+
+const deleteAllProductsDTO = async() => await products.deleteAllProducts()
+
 
 
 module.exports = { getAllProductsDTO, getProductByIdDTO, deleteProductDTO, deleteAllProductsDTO, addNewProductDTO, updateProductDTO }
