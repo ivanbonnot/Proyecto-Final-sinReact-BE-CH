@@ -2,12 +2,12 @@ const morgan = require('morgan');
 const express = require('express');
 const compression = require('compression')
 const logger = require('./log/log4js')
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
+const expressSession = require('express-session')
 
 const { config } = require('./config/enviroment')
 const cluster = require('cluster')
 const numCPUs = require('os').cpus().length
+const {mongodbUri, mongodbSecretPin, userSessionTime} = require('../config/enviroment')
 
 require('dotenv').config()
 
@@ -50,16 +50,18 @@ const baseProcces = () => {
     app.use(express.static('./public'))
 
 
-    app.use(session({
-        store: MongoStore.create({ mongoUrl: `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.xvejx.gcp.mongodb.net/test` }),
-        secret: '123456',
-        resave: true,
-        saveUninitialized: true,
-        rolling: true,
+    app.use(expressSession({
+        store: mongoStore.create({
+          mongoUrl: mongodbUri,
+          mongoOptions: advancedOptions
+        }),
+        secret: mongodbSecretPin,
+        resave: false,
+        saveUninitialized: false,
         cookie: {
-            maxAge: 600000 //tiempo de sesion en ms (10min)
+          maxAge: Number(userSessionTime)
         }
-    }))
+      }))
 
 
     const PORT = 8080

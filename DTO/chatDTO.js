@@ -2,14 +2,9 @@ const factoryDAO = require("../DAO/factory");
 
 const chats = factoryDAO()
 
-const getAllChatsDTO = () => {
-  const allChats = chats.getAllChats();
-  return allChats;
-};
+const getAllChatsDTO = () => chats.getAllChats();
 
-const addChatDTO = (message) => {
-  chats.saveChat(message);
-  return;
-};
+const addChatDTO = (message) => chats.saveChat(message);
+ 
 
 module.exports = { getAllChatsDTO, addChatDTO };

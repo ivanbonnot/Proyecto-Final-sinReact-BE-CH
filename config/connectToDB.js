@@ -1,5 +1,6 @@
 const logger = require("./log/log4js");
 const mongoose = require("mongoose");
+const { mongodbUri } = require('./enviroment')
 
 let isConnected;
 
@@ -9,10 +10,10 @@ const connectToDb = (db) => {
       mongoose.set("strictQuery", true);
       mongoose
         .connect(
-          `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.xvejx.gcp.mongodb.net/test`,
+          `mongodb+srv://${mongodbUri}`,
           { useNewUrlParser: true, useUnifiedTopology: true }
         )
-
+        //user:pass@cluster0.xvejx.gcp.mongodb.net/test
         .then(() => {
           isConnected = true;
           logger.info("MongoDB Connected", isConnected);

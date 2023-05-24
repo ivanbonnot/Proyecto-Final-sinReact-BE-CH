@@ -8,21 +8,22 @@ module.exports.config = {
 require('dotenv').config()
 module.exports.staticFiles = process.env.STATICFILES
 
-module.exports.mongocredentialsession = process.env.MONGOCREDENTIALSESSION
-module.exports.mongocredentialsecommerce = process.env.MONGOCREDENTIALSECOMMERCE
+module.exports.mongodbUri = process.env.MONGODB_URI
+module.exports.mongodbCredentials = process.env.MONGODB_CREDENTIALS
+module.exports.mongodbSecretPin =  process.env.MONGODB_SECRETPIN
 
-module.exports.usersessiontime = process.env.USER_SESSION_TIME
-module.exports.jwtsecretkey = process.env.JWT_SECRET_KEY
-module.exports.jwtexpires = process.env.JWT_EXPIRES
+module.exports.userSessionTime = process.env.USER_SESSION_TIME
+module.exports.jwtSecret = process.env.JWT_SECRET
+module.exports.jwtExpires = process.env.JWT_EXPIRES
 
-module.exports.emailservice = process.env.EMAILSERVICE
-module.exports.emailport = process.env.EMAILPORT
-module.exports.emailuser = process.env.EMAILUSER
-module.exports.emailpass = process.env.EMAILPASS
-module.exports.adminmail = process.env.ADMINMAIL
+module.exports.emailNodeMailer = process.env.EMAIL_NODEMAILER
+module.exports.emailHost = process.env.EMAIL_HOST
+module.exports.emailUser = process.env.EMAIL_USER
+module.exports.emailPassword = process.env.EMAIL_PASSWORD
+module.exports.emailAdmin = process.env.EMAIL_ADMIN
 
-module.exports.msgaccountsid = process.env.TWILIO_ACCOUNT_SID
-module.exports.msgauthtoken = process.env.TWILIO_AUTH_TOKEN
-module.exports.smsnumber = process.env.TWILIO_TWILIO_NUMBER
-module.exports.whatsappnumber = process.env.TWILIO_WSP_NUMBER
+module.exports.twilioAccountSid = process.env.TWILIO_ACCOUNT_SID
+module.exports.twilioAuthToken = process.env.TWILIO_AUTH_TOKEN
+module.exports.twilioNumber = process.env.TWILIO_TWILIO_NUMBER
+module.exports.twilioWspNumberr = process.env.TWILIO_WSP_NUMBER
 
