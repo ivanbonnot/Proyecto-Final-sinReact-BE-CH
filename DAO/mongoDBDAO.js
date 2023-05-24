@@ -48,74 +48,93 @@ class mongoDBDAO {
     };
 
 
+
     //___CART___//
 
-    async newCart( userEmail, adress ) {
+    async newCart(userEmail, adress) {
         try {
-          const newCart = new cartModel({ 
-            userEmail: userEmail,
-            products: [],
-            adress: adress
-          })
-          return await newCart.save()
+            const newCart = new cartModel({
+                userEmail: userEmail,
+                products: [],
+                adress: adress
+            })
+            return await newCart.save()
 
         } catch (error) {
-          logger.error(error)
+            logger.error(error)
         }
-      }
+    }
 
-    getCarts = async () => await cartModel.find({});
 
-    getCartById = async (id) => await cartModel.findOne({ _id: id });
+    async getCart(userEmail) {
+        try {
+            return await cartModel.findOne({ userEmail: userEmail })
+        } catch (error) {
+            logger.warn(`Error: ${error} al recuperar cart.`)
+            return false
+        }
+    }
 
-    deleteCart = async (id) => await cartModel.deleteOne({ _id: id });
 
-    addProductToCart = async (id, id_prod) => {
-        const cart = await this.getCartById(id);
+    async addProductToCart(itemId, number, userEmail) {
+        try {
+            const response = await cartModel.findOneAndUpdate(
+                { userEmail: userEmail, "products.id": itemId },
+                { $inc: { "products.$.number": number } },
+                { new: true }
+            )
+            if (!response) {
+                await cartModel.findOneAndUpdate(
+                    { userEmail: userEmail },
+                    { $push: { products: { id: itemId, number: number } } },
+                    { new: true }
+                )
+            }
+            return true
+        } catch (err) {
+            logger.warn(`Error: ${err} al agregar el producto al cart`)
+            return false
+        }
+    }
 
-        const isInCart = () =>
-            cart.products.find((product) => product.id === id_prod) ? true : false;
 
-        if (!isInCart()) {
-            await cartModel.updateOne(
-                { _id: id },
+    async deleteProductFromCart(itemId, username) {
+        try {
+            const response = await cartModel.findOneAndUpdate(
+                { username: username },
+                { $pull: { products: { id: itemId } } },
+                { new: true }
+            )
+            return response ? true : false
+        } catch (err) {
+            logger.warn(`Error: ${err} al borrar el producto del cart.`)
+            return false
+        }
+    }
+
+
+    async deleteCart(userEmail) {
+        try {
+            const response = await cartModel.findOneAndUpdate(
+                { userEmail: userEmail },
                 {
                     $set: {
-                        products: [...cart.products, { id: id_prod }],
-                    },
+                        products: [],
+                        timestamp: new Date().getTime()
+                    }
                 }
-            );
-            return;
+            )
+            return response ? true : false
+        } catch (error) {
+            logger.warn(`Error: ${error} al borrar cart`)
+            return false
         }
+    }
 
-        const indexProductUpdate = cart.products.findIndex(
-            (product) => product.id === id_prod
-        );
-
-        cart.products[indexProductUpdate].quantity += quantity;
-
-        await cartModel.updateOne(
-            { _id: id },
-            { $set: { products: [...cart.products] } }
-        );
-    };
-
-    deleteProductInCart = async (id_cart, id_prod) => {
-        const cart = await cartModel.findOne({ _id: id_cart });
-
-        const productsUpdate = cart.products.filter(
-            (product) => product.id !== id_prod
-        );
-
-        await cartModel.updateOne(
-            { _id: id_cart },
-            { $set: { products: [...productsUpdate] } }
-        );
-    };
 
 
     //___CHATS___//
-    
+
     async getAllChats() {
 
         const array = {

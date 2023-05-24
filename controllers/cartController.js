@@ -3,16 +3,16 @@ const { getAllProductsController } = require('../controllers/productsController'
 const sendEmail = require('../helpers/nodeMailer')
 const { adminmail } = require('../config/environment')
 
-const getCartController = ( username ) => getCartDto( username )
+const getCartController = ( userEmail ) => getCartDto( userEmail )
 
-const addProductToCartController = ( itemId, number, username ) => addProductToCartDto( itemId, number, username )
+const addProductToCartController = ( itemId, number, userEmail ) => addProductToCartDto( itemId, number, userEmail )
 
-const deleteProductFromCartController = ( itemId, username ) =>  delProductFromCartDto( itemId, username )
+const deleteProductFromCartController = ( itemId, userEmail ) =>  delProductFromCartDto( itemId, userEmail )
 
-const deleteCartController = ( username ) => delCartDto( username )
+const deleteCartController = ( userEmail ) => delCartDto( userEmail )
 
-const newOrderController = ( username ) => {
-  const cart =  getCartDto( username )
+const newOrderController = ( userEmail ) => {
+  const cart =  getCartDto( userEmail )
   if ( cart.products.length === 0 ) return false
 
   const products =  getAllProductsController()
@@ -40,7 +40,7 @@ const newOrderController = ( username ) => {
       <tbody>
         <tr>
           <td>Username</td>
-          <td>${username}</td>
+          <td>${userEmail}</td>
         </tr>
         <tr>
           <td>Email del usuario</td>
