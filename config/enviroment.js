@@ -9,7 +9,7 @@ require('dotenv').config()
 module.exports.staticFiles = process.env.STATICFILES
 
 module.exports.mongodbUri = process.env.MONGODB_URI
-module.exports.mongodbCredentials = process.env.MONGODB_CREDENTIALS
+module.exports.mongodbCredentialSession = process.env.MONGODB_CREDENTIAL_SESSION
 module.exports.mongodbSecretPin =  process.env.MONGODB_SECRETPIN
 
 module.exports.userSessionTime = process.env.USER_SESSION_TIME

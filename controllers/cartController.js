@@ -1,7 +1,7 @@
 const { getCartDto, addProductToCartDto, delProductFromCartDto, delCartDto, newOrderDto } = require('../DTO/cartDto')
 const { getAllProductsController } = require('../controllers/productsController')
 const sendEmail = require('../helpers/nodeMailer')
-const { adminmail } = require('../config/environment')
+const { emailAdmin } = require('../config/enviroment')
 
 const getCartController = ( userEmail ) => getCartDto( userEmail )
 
@@ -32,7 +32,7 @@ const newOrderController = ( userEmail ) => {
   const responseDelete =  deleteCartDto( userEmail )
   sendEmail({
     from: 'Administrador',
-    to: adminmail,
+    to: emailAdmin,
     subject: 'Nuevo pedido',
     text: '',
     html: `

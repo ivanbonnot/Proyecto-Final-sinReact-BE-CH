@@ -1,15 +1,20 @@
 const morgan = require('morgan');
 const express = require('express');
 const compression = require('compression')
-const logger = require('./log/log4js')
+const logger = require('../log/log4js')
 const expressSession = require('express-session')
+const mongoStore = require('connect-mongo')
 
-const { config } = require('./config/enviroment')
 const cluster = require('cluster')
 const numCPUs = require('os').cpus().length
-const {mongodbUri, mongodbSecretPin, userSessionTime} = require('../config/enviroment')
+const {config, mongodbSecretPin, userSessionTime, mongodbCredentialSession, mongodbUri} = require('../config/enviroment')
 
 require('dotenv').config()
+
+const advancedOptions = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
 
 
 const baseProcces = () => {
@@ -22,20 +27,20 @@ const baseProcces = () => {
     const { Server: HTTPServer } = require('http');
     const { Server: IOServer } = require('socket.io');
 
-    const infoRouter = require('./routes/api/info')
-    const productsRouter = require("./routes/api/product");
-    const authWebRouter = require('./routes/web/auth')
-    const homeWebRouter = require('./routes/web/home')
-    const cartRouter = require("./routes/api/cartRouter")
+    const infoRouter = require('../routes/api/info')
+    const productsRouter = require("../routes/api/productRouter");
+    const authWebRouter = require('../routes/web/auth')
+    const homeWebRouter = require('../routes/web/home')
+    const cartRouter = require("../routes/api/cartRouter")
 
-    const connectToDb = require("./config/connectToDB");
+    const connectToDb = require("../config/connectToDB");
 
     const app = express();
 
     const httpServer = new HTTPServer(app);
     const io = new IOServer(httpServer);
 
-    const { addChatController, getAllChatsController} = require('./controllers/chatsController')
+    const { addChatController, getAllChatsController} = require('../controllers/chatsController')
 
     //Settings
     app.set('port', process.env.PORT || 8080)

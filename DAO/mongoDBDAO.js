@@ -1,5 +1,5 @@
 const { productModel, cartModel, userModel, chatModel } = require("../models/mongoDBModels")
-const logger = require('../../log/log4js')
+const logger = require('../log/log4js')
 
 class mongoDBDAO {
 

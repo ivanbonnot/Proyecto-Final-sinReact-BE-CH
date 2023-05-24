@@ -1,2 +1,81 @@
 [2023-03-14T19:19:13.841] [WARN] default - Ruta: /info/coso, metodo: GET no existe
 [2023-03-15T17:48:36.233] [WARN] default - Ruta: /favicon.ico, metodo: GET no existe
+[2023-05-24T20:36:12.264] [ERROR] default - MongoAPIError: URI must include hostname, domain name, and tld
+    at resolveSRVRecord (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\connection_string.js:53:15)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\mongo_client.js:122:78
+    at maybeCallback (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\utils.js:338:21)
+    at MongoClient.connect (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\mongo_client.js:116:42)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\connection.js:810:12
+    at new Promise (<anonymous>)
+    at Connection.openUri (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\connection.js:799:19)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\index.js:411:10
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\helpers\promiseOrCallback.js:41:5
+    at new Promise (<anonymous>) {
+  [Symbol(errorLabels)]: Set(0) {}
+}
+[2023-05-24T20:38:42.393] [ERROR] default - MongoParseError: Password contains unescaped characters
+    at new ConnectionString (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb-connection-string-url\lib\index.js:115:23)
+    at parseOptions (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\connection_string.js:201:17)
+    at new MongoClient (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\mongo_client.js:46:63)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\connection.js:802:16
+    at new Promise (<anonymous>)
+    at Connection.openUri (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\connection.js:799:19)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\index.js:411:10
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\helpers\promiseOrCallback.js:41:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\helpers\promiseOrCallback.js:40:10)
+[2023-05-24T20:39:08.606] [ERROR] default - MongoParseError: Password contains unescaped characters
+    at new ConnectionString (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb-connection-string-url\lib\index.js:115:23)
+    at parseOptions (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\connection_string.js:201:17)
+    at new MongoClient (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\mongo_client.js:46:63)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\connection.js:802:16
+    at new Promise (<anonymous>)
+    at Connection.openUri (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\connection.js:799:19)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\index.js:411:10
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\helpers\promiseOrCallback.js:41:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\helpers\promiseOrCallback.js:40:10)
+[2023-05-24T20:40:21.916] [ERROR] default - MongoParseError: Password contains unescaped characters
+    at new ConnectionString (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb-connection-string-url\lib\index.js:115:23)
+    at parseOptions (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\connection_string.js:201:17)
+    at new MongoClient (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\mongo_client.js:46:63)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\connection.js:802:16
+    at new Promise (<anonymous>)
+    at Connection.openUri (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\connection.js:799:19)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\index.js:411:10
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\helpers\promiseOrCallback.js:41:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\helpers\promiseOrCallback.js:40:10)
+[2023-05-24T20:41:27.116] [ERROR] default - MongoParseError: Password contains unescaped characters
+    at new ConnectionString (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb-connection-string-url\lib\index.js:115:23)
+    at parseOptions (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\connection_string.js:201:17)
+    at new MongoClient (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\mongo_client.js:46:63)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\connection.js:802:16
+    at new Promise (<anonymous>)
+    at Connection.openUri (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\connection.js:799:19)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\index.js:411:10
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\helpers\promiseOrCallback.js:41:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\helpers\promiseOrCallback.js:40:10)
+[2023-05-24T20:41:31.606] [ERROR] default - MongoParseError: Password contains unescaped characters
+    at new ConnectionString (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb-connection-string-url\lib\index.js:115:23)
+    at parseOptions (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\connection_string.js:201:17)
+    at new MongoClient (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\mongo_client.js:46:63)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\connection.js:802:16
+    at new Promise (<anonymous>)
+    at Connection.openUri (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\connection.js:799:19)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\index.js:411:10
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\helpers\promiseOrCallback.js:41:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\helpers\promiseOrCallback.js:40:10)
+[2023-05-24T20:42:15.598] [ERROR] default - MongoParseError: Password contains unescaped characters
+    at new ConnectionString (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb-connection-string-url\lib\index.js:115:23)
+    at parseOptions (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\connection_string.js:201:17)
+    at new MongoClient (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongodb\lib\mongo_client.js:46:63)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\connection.js:802:16
+    at new Promise (<anonymous>)
+    at Connection.openUri (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\connection.js:799:19)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\index.js:411:10
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\helpers\promiseOrCallback.js:41:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\helpers\promiseOrCallback.js:40:10)

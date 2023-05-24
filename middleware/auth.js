@@ -3,7 +3,7 @@ const { Strategy: LocalStrategy } = require('passport-local');
 const { Strategy: JwtStrategy, ExtractJwt } = require('passport-jwt')
 
 const jwt = require('jsonwebtoken')
-const { jwtSecret, jwtExpires } = require('../config/environment')
+const { jwtSecret, jwtExpires } = require('../config/enviroment')
 
 const { compareSync, hashSync } = require('bcrypt');
 const { checkUserController } = require("../controllers/usersControler");
@@ -59,7 +59,7 @@ passport.deserializeUser(function (email, done) {
 });
 
 
-passport.use('jwt',new JwtStrategy({jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),secretOrKey: jwtsecretkey},
+passport.use('jwt',new JwtStrategy({jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),secretOrKey: jwtSecret},
       async (payload, done) => {
         try {
           const user = await checkUserController(payload.email)
