@@ -78,17 +78,9 @@ const baseProcces = () => {
 
     
     //Routes
-    app.use("/info", infoRouter)
-    app.use("/api/products", productsRouter)
-    app.use("/api/carrito", cartRouter)
-
-    //--- Ruta inexistente
-    /*
-    app.get('*', (req, res) => {
-        logger.warn(`Ruta: ${req.url}, metodo: ${req.method} no existe`)
-        res.send(`Ruta: ${req.url}, metodo: ${req.method} no existe`)
-    })
-    */
+    app.use("/", infoRouter)
+    app.use("/", productsRouter)
+    app.use("/", cartRouter)
 
     //__ WebServ Routes __//
     app.use("/", authWebRouter)

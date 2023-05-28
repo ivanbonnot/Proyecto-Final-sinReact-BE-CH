@@ -2,10 +2,12 @@ const factoryDAO = require('../DAO/factory')
 
 const users = factoryDAO()
 
-const checkUserDTO = async( email ) => await users.getUserBy( email );
+const checkUserDTO = async( username, password ) => await users.checkUser( username, password );
 
-const addUserDTO = async( user) =>  await users.saveUser( user );
+const getUserDTO = async( username ) => await users.getUserBy( username );
+
+const addUserDTO = async( user) =>  await users.addUser( user );
 
 
-module.exports = { checkUserDTO, addUserDTO }
+module.exports = { checkUserDTO, getUserDTO,addUserDTO }
 

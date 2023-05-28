@@ -1,4 +1,4 @@
-const { getCartDto, addProductToCartDto, delProductFromCartDto, delCartDto, newOrderDto } = require('../DTO/cartDto')
+const { getCartDto, addProductToCartDto, deleteProductFromCartDto, deleteCartDto, newOrderDto } = require('../DTO/cartDto')
 const { getAllProductsController } = require('../controllers/productsController')
 const sendEmail = require('../helpers/nodeMailer')
 const { emailAdmin } = require('../config/enviroment')
@@ -7,9 +7,9 @@ const getCartController = ( userEmail ) => getCartDto( userEmail )
 
 const addProductToCartController = ( itemId, number, userEmail ) => addProductToCartDto( itemId, number, userEmail )
 
-const deleteProductFromCartController = ( itemId, userEmail ) =>  delProductFromCartDto( itemId, userEmail )
+const deleteProductFromCartController = ( itemId, userEmail ) =>  deleteProductFromCartDto( itemId, userEmail )
 
-const deleteCartController = ( userEmail ) => delCartDto( userEmail )
+const deleteCartController = ( userEmail ) => deleteCartDto( userEmail )
 
 const newOrderController = ( userEmail ) => {
   const cart =  getCartDto( userEmail )

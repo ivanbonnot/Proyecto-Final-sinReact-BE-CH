@@ -1,83 +1,101 @@
 const passport = require('passport');
 const { Strategy: LocalStrategy } = require('passport-local');
-const { Strategy: JwtStrategy, ExtractJwt } = require('passport-jwt')
+const JwtStrategy = require('passport-jwt').Strategy;
+const ExtractJwt = require('passport-jwt').ExtractJwt;
+const  logger  = require('../log/log4js')
 
 const jwt = require('jsonwebtoken')
 const { jwtSecret, jwtExpires } = require('../config/enviroment')
 
 const { compareSync, hashSync } = require('bcrypt');
-const { checkUserController } = require("../controllers/usersControler");
+const { checkUserController, getUserController } = require("../controllers/usersControler");
 
 const users = [];
 let userMongo = [];
 
-passport.use('login', new LocalStrategy({ usernameField: "email" }, async (email, password, done) => {
-    const user = users.find(user => user.email === email && compareSync(password, user.password));
-    const usersDB = await checkUserController(email)
-
-    if (usersDB) {
-        let userMongoDB = []
-        userMongoDB.push(usersDB)
-        userMongo = userMongoDB.find(user => user.email === email && compareSync(password, user.password));
-    }
-
-    if (user) {
-        done(null, user);
-
-    } else if (userMongo?.email) {
-        done(null, userMongo);
-
-    } else {
-        done(null, false, { message: 'Nombre de usuario o contraseña incorrectos' });
-    }
-
-}));
 
 
-passport.use('register', new LocalStrategy({ passReqToCallback: true }, async (req, username, password, done) => {
-    const email = req.body.email
-    const existentUser = users.find(user => user.username === username);
-
-    if (existentUser) {
-        done(null, false, { message: 'El usuario o el email ya existe' });
-        return;
-    }
-
-    const user = { email, password: hashSync(password, 10) };
-    users.push(user);
-    done(null, user);
-}));
-
-
-passport.serializeUser(function (user, done) {
-    done(null, user.email);
-});
-
-passport.deserializeUser(function (email, done) {
-    const user = users.find(user => user.email === email);
-    done(null, user);
-});
-
-
-passport.use('jwt',new JwtStrategy({jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),secretOrKey: jwtSecret},
-      async (payload, done) => {
-        try {
-          const user = await checkUserController(payload.email)
-          return done(null, user !== null ? user : false)
-        } catch (error) {
-          return done(error, false)
-        }
+passport.use(
+  'login',
+  new LocalStrategy(
+    async function( username, password, done ) {
+      const checkUser = await checkUserController (username, password)
+      if ( checkUser.result ) {     
+        return done( null, { username: username } )
+      } else {
+        logger.info(`Usuario o contrasena incorrectos.`)
+        return done( null, false, { message: 'Nombre de usuario o contraseña incorrectos' } )
       }
-    )
+    }
   )
-  
-  
-module.exports.generateJwtToken = ( email ) =>{
-    const payload = {
-      email: email
+)
+
+
+passport.use(
+  'register',
+  new LocalStrategy(
+    async ( username, password, done ) => {
+      const checkUser = await checkUserController( username, password )
+      console.log(checkUser)
+      if (checkUser.result === true) {
+        logger.info(`Se intento registrar un usuario ya existente`)
+        return done( null, false, { message: 'El usuario o el email ya existe' } )  
+      } else {
+        return done( null, { username: username } )
+      }
     }
-    const options = {
-      expiresIn: jwtExpires 
+  )
+)
+
+
+passport.serializeUser( function(user, done) {
+  done(null, user.username)
+})
+
+passport.deserializeUser( function(username, done) {
+  done(null, { username: username })
+})
+
+
+passport.use('jwt', new JwtStrategy({ jwtFromRequest: ExtractJwt.fromUrlQueryParameter('token'), secretOrKey: jwtSecret },
+  async (payload, done) => {
+    try {
+      const user = await getUserController(payload.username)
+      return done(null, user !== null ? user : false)
+    } catch (error) {
+      return done(error, false)
     }
-    return jwt.sign(payload, jwtSecret, options)
   }
+)
+)
+
+module.exports =  passport 
+
+
+
+module.exports.generateJwtToken = (username) => {
+  const payload = {
+    username: username
+  }
+  const options = {
+    expiresIn: jwtExpires
+  }
+  return jwt.sign(payload, jwtSecret, options)
+}
+
+
+let blacklistJWT = []
+
+module.exports.addDeleteJWT = (token) => blacklistJWT.push(token)
+
+module.exports.isDeleteJWT = (req, res, next) => {
+  if (blacklistJWT.includes(req.headers.authorization)) {
+    logger.warn(`El JWT ya no es valido, token: ${req.headers.authorization}`)
+    res.redirect(`info/error/JWT ya no es valido: ${req.headers.authorization}`)
+  } else {
+    next()
+  }
+}
+
+
+

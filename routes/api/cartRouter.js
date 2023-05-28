@@ -2,25 +2,31 @@ const { Router } = require('express');
 const sendMessage = require('../../helpers/twilioMessage')
 const sendEmail = require('../../helpers/nodeMailer')
 const logger = require('../../log/log4js')
-const { checkUserController } = require('../../controllers/usersControler');
+
+const passport = require('../../middleware/auth')
+
+const { getUserController } = require('../../controllers/usersControler');
 const { getCartController, addProductToCartController, deleteProductFromCartController, deleteCartController, newOrderController } = require('../../controllers/cartController');
+const { getProductByIdController } = require('../../controllers/productsController');
+const { twilioWspNumber } = require('../../config/enviroment');
 const cartRouter = Router();
 
 
-cartRouter.get("/", async (req, res) => {
+cartRouter.get("/carrito", passport.authenticate('jwt', { session: false }), async (req, res) => {
   const { method, url } = req;
 
   try {
-    if (req.session.email) {
-      const email = req.session.email;
-      const user = await checkUserController(email);
+    const userEmail = req.user.username
+    if (userEmail) {
+
+      const user = await getUserController(userEmail);
 
       if (!user) {
         logger.error(`Ruta: ${url}, método: ${method}. No existe la cuenta`);
         return res.status(403).json({ result: "error" });
       }
 
-      const cart = await getCartController(email);
+      const cart = await getCartController(userEmail);
       return res.status(200).json(cart);
 
     } else {
@@ -34,18 +40,15 @@ cartRouter.get("/", async (req, res) => {
 });
 
 
-cartRouter.post("/", async (req, res) => {
-  const { url, method } = req;
+cartRouter.post("/carrito", passport.authenticate('jwt', { session: false }), async (req, res) => {
+  const { url, method, } = req;
+  const userEmail = req.user.username
 
   try {
-    if (req.session.email) {
-      const addProd = await addProductToCartController(req.query.itemId, parseInt(req.query.number), req.session.email);
-      logger.info(`El método y la ruta son: ${method} ${url}.`);
-      return res.json(addProd);
-    }
-
-    logger.error(`El método y la ruta son: ${method} ${url}. Sesión no iniciada.`);
-    return res.redirect("/login");
+    const addProd = await addProductToCartController(req.query.itemId, parseInt(req.query.number), userEmail);
+    logger.info(`El método y la ruta son: ${method} ${url} ${userEmail}.`);
+    logger.info(addProd)
+    res.json(addProd);
 
   } catch (error) {
     logger.error(`Error al agregar producto al carrito: ${error}`);
@@ -54,13 +57,13 @@ cartRouter.post("/", async (req, res) => {
 });
 
 
-
-cartRouter.delete("/:id", async (req, res) => {
+cartRouter.delete("/carrito/:id", passport.authenticate('jwt', { session: false }), async (req, res) => {
   const { url, method } = req;
+  const userEmail = req.user.username
 
   try {
-    if (req.session.email) {
-      const cart = await getCartController(req.session.email);
+    if ( userEmail ) {
+      const cart = await getCartController( userEmail );
 
       if (!cart) {
         logger.error(`El método y la ruta son: ${method} ${url}. Carrito no encontrado.`);
@@ -68,7 +71,7 @@ cartRouter.delete("/:id", async (req, res) => {
         return;
       }
 
-      const deleteProd = await deleteProductFromCartController(req.params.id, req.session.email);
+      const deleteProd = await deleteProductFromCartController(req.params.id, userEmail );
 
       logger.info(`El método y la ruta son: ${method} ${url}.`);
       res.json(deleteProd);
@@ -85,12 +88,13 @@ cartRouter.delete("/:id", async (req, res) => {
 });
 
 
-cartRouter.delete("/", async (req, res) => {
+cartRouter.delete("/carrito", passport.authenticate('jwt', { session: false }), async (req, res) => {
   const { url, method } = req;
+  const userEmail = req.user.username
 
   try {
-    if (req.session.email) {
-      const cart = await getCartController(req.session.email);
+    if (userEmail) {
+      const cart = await getCartController(userEmail);
 
       if (!cart) {
         logger.error(`El método y la ruta son: ${method} ${url}. Carrito no encontrado.`);
@@ -98,7 +102,7 @@ cartRouter.delete("/", async (req, res) => {
         return;
       }
 
-      const deleteCart = await deleteCartController(req.session.passport.user)
+      const deleteCart = await deleteCartController(userEmail)
 
       logger.info(`El método y la ruta son: ${method} ${url}.`);
       res.json(deleteCart);
@@ -115,20 +119,20 @@ cartRouter.delete("/", async (req, res) => {
 });
 
 
-cartRouter.get("/confirm", async (req, res) => {
+cartRouter.get("/carrito/confirm", passport.authenticate('jwt', { session: false }), async (req, res) => {
   const { url, method } = req;
 
-  if (req.session.email) {
-    const emailUser = req.session.email;
+  const userEmail = req.user.username
 
-    const user = await dbController.getUser(emailUser);
-    const cart = await dbController.getCartById(user.cartId);
+  if (userEmail) {
+    const user = await getUserController(userEmail);
+    const cart = await getCartController(userEmail);
 
     let messageToSend = `Productos:`;
     let html = `<h1>Productos:</h1>`;
 
-    for (const productCart of cart.productos) {
-      const product = await dbController.getProductById(productCart.id);
+    for (const productCart of cart.products) {
+      const product = await getProductByIdController(productCart.id);
 
       messageToSend += `
       - nombre: ${product.title}, precio: ${product.price}`;
@@ -140,7 +144,7 @@ cartRouter.get("/confirm", async (req, res) => {
     await sendMessage(user.phone, messageToSend);
 
     await sendMessage(
-      process.env.WSP_NUMbER,
+      twilioWspNumber,
       messageToSend,
       true
     );

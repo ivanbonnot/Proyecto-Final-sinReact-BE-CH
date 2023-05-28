@@ -1,19 +1,51 @@
 const { productModel, cartModel, userModel, chatModel } = require("../models/mongoDBModels")
 const logger = require('../log/log4js')
+const bcrypt = require('bcrypt')
 
 class mongoDBDAO {
 
     //___USER__//
 
-    saveUser = async (userToAdd) => {
+    addUser = async (userToAdd) => {
         const user = new userModel(userToAdd);
         await user.save();
-        console.log("guardado", user)
+
+        const newCart = new cartModel({ // nuevo cart
+            userEmail: user.username,
+            products: [],
+            address: user.address
+          })
+          await newCart.save()
     };
 
     getUsers = async () => await userModel.find({});
 
-    getUserBy = async (email) => await userModel.findOne({ email: email });
+    checkUser = async (username, password) => {
+          try {
+        const userExist = await userModel.findOne({ username: username })
+        if ( userExist !== null ) {
+          if ( bcrypt.compareSync( password, userExist.password ) ) {
+            return { msg: 'Usuario y contrasena correctos', result: true }
+          } else {
+            logger.info(`Se ha intentado logear ${username} con una contrasena incorrecta`)
+            return { msg: 'Contrasena incorrecta', result: false }
+          }
+        } 
+        return { msg: 'No existe usuario', result: false }
+      } catch(err) {
+        logger.error(`Error: ${err}`)
+      }
+    }
+
+    async getUserBy( username ) {
+        try {
+          const userExiste = await userModel.findOne({username: username})
+          return userExiste ? userExiste : null
+        } catch(err) {
+          logger.error(`Error: ${err} al intentar recuperar el usuario id:${username} de la base de datos`)
+          return null
+        }
+      }
 
     deleteUser = async (id) => await userModel.deleteOne({ _id: id });
 
@@ -51,10 +83,10 @@ class mongoDBDAO {
 
     //___CART___//
 
-    async newCart(userEmail, adress) {
+    async newCart(username, adress) {
         try {
             const newCart = new cartModel({
-                userEmail: userEmail,
+                userEmail: username,
                 products: [],
                 adress: adress
             })
@@ -66,9 +98,9 @@ class mongoDBDAO {
     }
 
 
-    async getCart(userEmail) {
+    async getCart(username) {
         try {
-            return await cartModel.findOne({ userEmail: userEmail })
+            return await cartModel.findOne({ userEmail: username })
         } catch (error) {
             logger.warn(`Error: ${error} al recuperar cart.`)
             return false
@@ -76,16 +108,16 @@ class mongoDBDAO {
     }
 
 
-    async addProductToCart(itemId, number, userEmail) {
+    async addProductToCart(itemId, number, username) {
         try {
             const response = await cartModel.findOneAndUpdate(
-                { userEmail: userEmail, "products.id": itemId },
+                { userEmail: username, "products.id": itemId },
                 { $inc: { "products.$.number": number } },
                 { new: true }
             )
             if (!response) {
                 await cartModel.findOneAndUpdate(
-                    { userEmail: userEmail },
+                    { userEmail: username },
                     { $push: { products: { id: itemId, number: number } } },
                     { new: true }
                 )
@@ -113,10 +145,10 @@ class mongoDBDAO {
     }
 
 
-    async deleteCart(userEmail) {
+    async deleteCart(username) {
         try {
             const response = await cartModel.findOneAndUpdate(
-                { userEmail: userEmail },
+                { userEmail: username },
                 {
                     $set: {
                         products: [],

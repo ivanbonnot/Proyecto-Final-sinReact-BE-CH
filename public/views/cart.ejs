@@ -23,34 +23,10 @@ https://cdn.jsdelivr.net/npm/normalizr@3.6.2/dist/normalizr.browser.min.js
 <body>
     <div class="container mt-3">
         <div class="jumbotron">
-            <h1>Login de Usuario</h1>
-            <form action="/login" method="post" autocomplete="off">
-                <div>
-                    <% if (message.length> 0) { %>
-                        <div class="alert alert-danger flash">
-                            <%= message %>
-                        </div>
-                        <% } %>
-                </div>
-                <div>
-                    <p>Correo Electrónico</p>
-                    <input type="email" name="username" autofocus="" autocapitalize="none" autocomplete="email" required=""
-                        id="id_email">
-                </div>
-                <div>
-                    <p>Password</p>
-                    <div class="password">
-                        <input type="password" name="password" autocomplete="current-password" required=""
-                            id="id_password">
-                        <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
+            <h1>Carrito</h1>
             
-            <form action="/register" method="get" autocomplete="off">
-                <button class="btn btn-success mt-3">Ir a Register</button>
+            <form action="/confirm" method="get" autocomplete="off">
+                <button class="btn btn-success mt-3">Confirmar compra</button>
             </form>
         </div>
     </div>

@@ -3,19 +3,26 @@ const path = require('path')
 const homeWebRouter = Router()
 const logger = require("../../log/log4js")
 
+require('../../middleware/auth');
+const  { generateJwtToken }  = require('../../middleware/auth')
+
 
 homeWebRouter.get('/', (req, res) => {
+    
     try {
-        const email = req.session.email
-        logger.info("9", email)
-
-        if (email) {
-            res.render(path.join(process.cwd(), '../FrontEnd/views/home.ejs'), { email })
+        const username = req.session.passport.user
+        let userData = ''
+        if (username) {
+            logger.info(`Usuario ${username} logeado`)
+            userData = Object.assign({}, userData._doc, { token: generateJwtToken(username) })
+            logger.info(userData)
+            //res.status(200).send(userData)
+            res.render(path.join(process.cwd(), './public/views/home.ejs'), { username })
         } else {
-            res.sendFile(path.join(process.cwd(), '../FrontEnd/views/login.ejs'))
+            res.sendFile(path.join(process.cwd(), './public/views/login.ejs'))
             res.redirect('/login')
         }
-    } catch {
+    } catch(error) {
         logger.error(error);
         res.status(500).send('Error interno del servidor');
     }

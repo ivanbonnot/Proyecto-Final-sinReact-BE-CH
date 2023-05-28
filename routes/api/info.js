@@ -2,7 +2,7 @@ const { Router } = require('express');
 const infoRouter = Router();
 const logger = require('../../log/log4js')
 
-infoRouter.get('/', async ( req, res) => {
+infoRouter.get('/info', async ( req, res) => {
 
     const info = {
         cwd: `Directorio actual de trabajo: ${process.cwd()}`,

@@ -25,5 +25,5 @@ module.exports.emailAdmin = process.env.EMAIL_ADMIN
 module.exports.twilioAccountSid = process.env.TWILIO_ACCOUNT_SID
 module.exports.twilioAuthToken = process.env.TWILIO_AUTH_TOKEN
 module.exports.twilioNumber = process.env.TWILIO_TWILIO_NUMBER
-module.exports.twilioWspNumberr = process.env.TWILIO_WSP_NUMBER
+module.exports.twilioWspNumber = process.env.TWILIO_WSP_NUMBER
 

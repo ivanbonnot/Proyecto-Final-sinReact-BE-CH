@@ -8,97 +8,145 @@ const {
 } = require("../../controllers/productsController");
 
 const productsRouter = Router();
+const passport = require('../../middleware/auth')
+const logger = require('../../log/log4js')
 
 const adm = true;
 
-productsRouter.get("/", async (req, res) => {
-  const products = await getAllProductsController();
-  res.json({ products });
+
+productsRouter.get("/productos", passport.authenticate('jwt', { session: false }), async (req, res) => {
+
+  try {
+    const products = await getAllProductsController();
+    res.json({ products });
+
+  } catch (error) {
+    logger.error(`Error en la solicitud de productos: ${error}`);
+    return res.status(500).json({ result: "error" });
+  }
 });
 
-productsRouter.get("/:id", async (req, res) => {
+
+productsRouter.get("/productos/:id", passport.authenticate('jwt', { session: false }), async (req, res) => {
+  const {method, url} = req
   const { id } = req.params;
-  const productById = await getProductByIdController(id);
 
-  if (productById) {
-    res.json(productById);
-  } else {
-    res.status(404).send({ error: "Product not found" });
-  }
-});
-
-productsRouter.post("/", async (req, res) => {
-  if (adm) {
-    const { title, description, code, thumbnail, price, stock } = req.body;
-
-    if (!title || !description || !code || !thumbnail || !price || !stock) {
-      res.status(400).send({ error: "Falta completar campos" });
-      return;
-    }
-
-    const product = {
-      timestamp: Date.now(),
-      title,
-      description,
-      code,
-      thumbnail,
-      price,
-      stock,
-    };
-
-    await addNewProductController(product);
-    res.json(product);
-  } else {
-    res.send('Error: 403 Ruta: "api/products" Método: "POST" No Autorizada');
-  }
-});
-
-productsRouter.put("/:id", async (req, res) => {
-  if (adm) {
-    const { id } = req.params;
-    const { title, description, code, thumbnail, price, stock } = req.body;
-
-    const productUpdate = {
-      timestamp: Date.now(),
-      title,
-      description,
-      code,
-      thumbnail,
-      price,
-      stock,
-    };
-
+  try {
     const productById = await getProductByIdController(id);
 
     if (productById) {
-      await updateProductController(id, productUpdate);
-      res.send(productUpdate);
+      res.json(productById);
     } else {
-      res.status(404).send({ error: "Product not found with ID: ${id}" });
+      logger.error(`Ruta: ${url}, método: ${method}. No existe el producto:${id}`);
+      return res.status(403).json({ result: "error" });
     }
-  } else {
-    res.send(
-      'Error: 403 Ruta: "api/products/:Id" Método: "PUT" No Autorizada '
-    );
+
+  } catch (error) {
+    logger.error(`Error en la solicitud de producto por id: ${error}`);
+    return res.status(500).json({ result: "error" });
   }
 });
 
-productsRouter.delete("/:id", async (req, res) => {
-  if (adm) {
-    const { id } = req.params;
-    const productById = await getProductByIdController(id);
 
-    if (productById) {
-     await deleteProductController(id);
-      res.status(200).json({ deleted: true });
+productsRouter.post("/productos", passport.authenticate('jwt', { session: false }), async (req, res) => {
+  const {method, url} = req
+
+  try {
+    if (adm) {
+      const { title, description, code, thumbnail, price, stock } = req.body;
+
+      if (!title || !description || !code || !thumbnail || !price || !stock) {
+        return res.status(400).send({ error: "Falta completar campos" });
+      }
+
+      const product = {
+        timestamp: Date.now(),
+        title,
+        description,
+        code,
+        thumbnail,
+        price,
+        stock,
+      };
+
+      await addNewProductController(product);
+      res.json(product);
     } else {
-      res.status(404).json({ error: "Product not found with ID: ${id}" });
+      logger.error(`Ruta: ${url}, método: ${method}. Usuario no autorizado`);
+      return res.status(403).json({ result: "error" });
     }
-  } else {
-    res.send(
-      'Error: 403 Ruta: "api/products/:Id" Método: "DELETE" No Autorizada '
-    );
+
+  } catch (error) {
+    logger.error(`Error al crear producto: ${error}`);
+    return res.status(500).json({ result: "error" });
   }
 });
+
+
+productsRouter.put("/productos/:id", passport.authenticate('jwt', { session: false }), async (req, res) => {
+  const {method, url} = req
+
+  try {
+    if (adm) {
+      const { id } = req.params;
+      const { title, description, code, thumbnail, price, stock } = req.body;
+
+      const productUpdate = {
+        timestamp: Date.now(),
+        title,
+        description,
+        code,
+        thumbnail,
+        price,
+        stock,
+      };
+
+      const productById = await getProductByIdController(id);
+
+      if (productById) {
+        await updateProductController(id, productUpdate);
+        res.send(productUpdate);
+      } else {
+        logger.error(`Ruta: ${url}, método: ${method}. No existe el producto:${id}`);
+        return res.status(403).json({ result: "error" });
+      }
+    } else {
+      logger.error(`Ruta: ${url}, método: ${method}. Usuario no autorizado`);
+      return res.status(403).json({ result: "error" });
+    }
+
+  } catch (error) {
+    logger.error(`Error al actualizar el producto: ${error}`);
+    return res.status(500).json({ result: "error" });
+  }
+});
+
+
+productsRouter.delete("/productos/:id", passport.authenticate('jwt', { session: false }), async (req, res) => {
+const {method, url} = req
+
+  try {
+    if (adm) {
+      const { id } = req.params;
+      const productById = await getProductByIdController(id);
+
+      if (productById) {
+        await deleteProductController(id);
+        res.status(200).json({ deleted: true });
+      } else {
+        logger.error(`Ruta: ${url}, método: ${method}. No existe el producto:${id}`);
+        return res.status(403).json({ result: "error" });
+      }
+    } else {
+      logger.error(`Ruta: ${url}, método: ${method}. Usuario no autorizado`);
+      return res.status(403).json({ result: "error" });
+    }
+
+  } catch (error) {
+    logger.error(`Error al borrar el producto: ${error}`);
+    return res.status(500).json({ result: "error" });
+  }
+});
+
 
 module.exports = productsRouter;

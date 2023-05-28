@@ -77,3 +77,508 @@
     at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\helpers\promiseOrCallback.js:41:5
     at new Promise (<anonymous>)
     at promiseOrCallback (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\helpers\promiseOrCallback.js:40:10)
+[2023-05-25T14:20:01.050] [ERROR] default - ReferenceError: cart is not defined
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:78:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[2023-05-26T14:07:42.995] [ERROR] default - Ruta: /, método: GET. Sesión no iniciada
+[2023-05-26T14:28:42.326] [ERROR] default - El método y la ruta son: POST /. Sesión no iniciada.
+[2023-05-26T14:35:08.307] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T15:48:51.108] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T15:49:09.549] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T15:49:58.145] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T15:52:12.126] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T15:52:55.747] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T15:53:16.719] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T15:54:11.018] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T15:54:52.832] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T15:56:07.188] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T15:56:33.037] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T15:58:48.244] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T15:59:47.488] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T16:00:37.868] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T20:19:16.439] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T20:19:39.849] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T20:31:27.389] [ERROR] default - ReferenceError: userData is not defined
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:35:38
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at complete (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\middleware\authenticate.js:271:13)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\middleware\authenticate.js:278:15
+    at pass (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\authenticator.js:428:14)
+    at Authenticator.transformAuthInfo (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\authenticator.js:450:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\middleware\authenticate.js:275:22
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\http\request.js:41:7
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\sessionmanager.js:51:9
+[2023-05-26T20:31:55.806] [ERROR] default - ReferenceError: Cannot access 'userData' before initialization
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:35:44
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at complete (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\middleware\authenticate.js:271:13)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\middleware\authenticate.js:278:15
+    at pass (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\authenticator.js:428:14)
+    at Authenticator.transformAuthInfo (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\authenticator.js:450:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\middleware\authenticate.js:275:22
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\http\request.js:41:7
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\sessionmanager.js:51:9
+[2023-05-26T20:32:24.421] [ERROR] default - TypeError: generateJwtToken is not a function
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:36:62
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at complete (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\middleware\authenticate.js:271:13)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\middleware\authenticate.js:278:15
+    at pass (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\authenticator.js:428:14)
+    at Authenticator.transformAuthInfo (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\authenticator.js:450:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\middleware\authenticate.js:275:22
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\http\request.js:41:7
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\passport\lib\sessionmanager.js:51:9
+[2023-05-26T20:34:28.903] [ERROR] default - TypeError: Cannot read properties of null (reading '_doc')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:36:47
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[2023-05-26T20:35:09.691] [ERROR] default - TypeError: Cannot read properties of null (reading '_doc')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:35:47
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[2023-05-26T20:35:37.778] [ERROR] default - TypeError: Cannot read properties of null (reading '_doc')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:35:47
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[2023-05-26T20:38:58.936] [ERROR] default - TypeError: Cannot read properties of null (reading '_doc')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:36:47
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[2023-05-26T20:39:04.501] [ERROR] default - TypeError: Cannot read properties of null (reading '_doc')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:36:47
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[2023-05-26T20:39:33.557] [ERROR] default - TypeError: generateJwtToken is not a function
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:36:62
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[2023-05-26T20:40:39.659] [ERROR] default - Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:393:5)
+    at ServerResponse.setHeader (node:_http_outgoing:644:11)
+    at ServerResponse.header (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.location (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\response.js:915:15)
+    at ServerResponse.redirect (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\response.js:953:18)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:37:40
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+[2023-05-26T20:41:34.180] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'send')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:37:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[2023-05-26T20:43:08.087] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'send')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:37:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[2023-05-26T20:45:45.412] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'send')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:37:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[2023-05-26T20:49:37.192] [ERROR] default - Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:393:5)
+    at ServerResponse.setHeader (node:_http_outgoing:644:11)
+    at ServerResponse.header (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.location (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\response.js:915:15)
+    at ServerResponse.redirect (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\response.js:953:18)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:38:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+[2023-05-26T21:08:40.424] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-26T21:12:42.201] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2. Sesión no iniciada.
+[2023-05-27T18:00:33.857] [ERROR] default - ReferenceError: userData is not defined
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:17:38
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:47:12)
+[2023-05-27T18:01:09.746] [ERROR] default - ReferenceError: Cannot access 'userData' before initialization
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:17:44
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:47:12)
+[2023-05-27T18:01:34.976] [ERROR] default - TypeError: Assignment to constant variable.
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:17:19
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:47:12)
+[2023-05-27T18:03:14.159] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'send')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:18:87
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:47:12)
+[2023-05-27T18:03:14.464] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'send')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:18:87
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:47:12)
+[2023-05-27T18:03:14.539] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'send')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:18:87
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:47:12)
+[2023-05-27T18:03:43.161] [ERROR] default - Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:393:5)
+    at ServerResponse.setHeader (node:_http_outgoing:644:11)
+    at ServerResponse.header (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.json (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\response.js:275:10)
+    at ServerResponse.send (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\response.js:162:21)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:19:17
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+[2023-05-27T18:03:43.447] [ERROR] default - Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:393:5)
+    at ServerResponse.setHeader (node:_http_outgoing:644:11)
+    at ServerResponse.header (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.json (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\response.js:275:10)
+    at ServerResponse.send (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\response.js:162:21)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:19:17
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+[2023-05-27T18:03:43.501] [ERROR] default - Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:393:5)
+    at ServerResponse.setHeader (node:_http_outgoing:644:11)
+    at ServerResponse.header (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.json (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\response.js:275:10)
+    at ServerResponse.send (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\response.js:162:21)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:19:17
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+[2023-05-27T18:20:42.253] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iml2YW5ib25ub3RAaG90bWFpbC5jb20iLCJpYXQiOjE2ODUyMjI0MzMsImV4cCI6MTY5NTIyMjQzM30.I1fBVEZ5zJX5I01Q7T6dAJ7X6LsQ2E7Q-Q25TdtjbuA. Sesión no iniciada.
+[2023-05-27T19:10:27.010] [ERROR] default - El método y la ruta son: POST /?itemId=646fabf006eb946588958882&number=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iml2YW5ib25ub3RAaG90bWFpbC5jb20iLCJpYXQiOjE2ODUyMjU0MTgsImV4cCI6MTY5NTIyNTQxOH0.4vKwJSeObXRkOrI1qVefoTheHff9EU-ghkLraZw_d4Y. Sesión no iniciada.
+[2023-05-27T19:13:50.626] [ERROR] default - Error al agregar producto al carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T19:14:58.179] [ERROR] default - Error al agregar producto al carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T19:15:30.978] [ERROR] default - Error al agregar producto al carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T19:16:20.486] [ERROR] default - Error al agregar producto al carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T19:16:31.615] [ERROR] default - Error al agregar producto al carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T19:24:26.231] [ERROR] default - Error al agregar producto al carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T19:25:31.868] [ERROR] default - Error al agregar producto al carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T19:26:00.184] [ERROR] default - Error al agregar producto al carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T19:27:44.429] [ERROR] default - Error al agregar producto al carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T19:30:17.231] [ERROR] default - Error al agregar producto al carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T19:33:04.666] [ERROR] default - Error al agregar producto al carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T20:38:32.393] [ERROR] default - ReferenceError: userData is not defined
+    at mongoDBDAO.saveUser (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\DAO\mongoDBDAO.js:14:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async addUserDTO (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\DTO\usersDTO.js:7:37)
+    at async C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:83:13
+[2023-05-27T20:39:59.688] [ERROR] default - Error: Cart validation failed: adress: Path `adress` is required.
+    at ValidationError.inspect (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:806:19)
+    at inspect (node:internal/util/inspect:365:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2273:40)
+    at Object.format (node:internal/util/inspect:2130:10)
+    at basicLayout (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    adress: ValidatorError: Path `adress` is required.
+        at validate (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaType.doValidate (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\mongoose\lib\document.js:2905:18
+        at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'adress',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'Cart validation failed'
+}
+[2023-05-27T20:51:33.158] [ERROR] default - Ruta: /carrito/, método: GET. Sesión no iniciada
+[2023-05-27T21:01:56.944] [ERROR] default - Ruta: /carrito/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iml2YW5ib25ub3RAaG90bWFpbC5jb20iLCJpYXQiOjE2ODUyMzIxMDYsImV4cCI6MTY5NTIzMjEwNn0.3Q0zRqwN9H3Plf8MtrEEC2yD3t1xfOCofF6YB-Gdn98, método: GET. Sesión no iniciada
+[2023-05-27T21:02:55.785] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T21:03:31.830] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T21:11:27.335] [ERROR] default - ReferenceError: passport is not defined
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:13:21
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:47:12)
+[2023-05-27T21:12:50.003] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T21:23:29.483] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T21:30:08.579] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T21:43:14.056] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T21:43:47.118] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T21:44:11.090] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T21:50:52.869] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T21:56:50.579] [ERROR] default - TypeError: generateJwtToken is not a function
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:16:66
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:47:12)
+[2023-05-27T21:57:07.112] [ERROR] default - TypeError: generateJwtToken is not a function
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:16:66
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:47:12)
+[2023-05-27T21:57:56.553] [ERROR] default - TypeError: generateJwtToken is not a function
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:16:66
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:47:12)
+[2023-05-27T21:58:56.851] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T22:47:12.891] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T22:47:30.459] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T22:49:39.277] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T22:58:09.214] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T22:58:38.120] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T22:58:55.514] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T23:00:01.902] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T23:00:20.184] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T23:03:15.545] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-27T23:04:31.592] [ERROR] default - Error en la solicitud del carrito: TypeError: carts.getCartByEmail is not a function
+[2023-05-28T10:28:55.925] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-28T10:30:49.342] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-28T10:31:31.266] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:19:34
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\connect-flash\lib\flash.js:21:5
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+[2023-05-28T10:32:18.083] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:19:34
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\connect-flash\lib\flash.js:21:5
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+[2023-05-28T10:33:03.338] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:19:34
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\connect-flash\lib\flash.js:21:5
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+[2023-05-28T10:35:26.736] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:19:34
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\connect-flash\lib\flash.js:21:5
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+[2023-05-28T10:36:19.825] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:19:34
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\connect-flash\lib\flash.js:21:5
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+[2023-05-28T10:38:32.642] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'email')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:19:22
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\connect-flash\lib\flash.js:21:5
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+[2023-05-28T10:39:50.241] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:19:34
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\connect-flash\lib\flash.js:21:5
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+[2023-05-28T10:43:28.017] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:19:34
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\connect-flash\lib\flash.js:21:5
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+[2023-05-28T10:46:34.657] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:19:34
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\connect-flash\lib\flash.js:21:5
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+[2023-05-28T10:47:18.850] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:19:34
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\connect-flash\lib\flash.js:21:5
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+[2023-05-28T10:48:02.768] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:19:48
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\connect-flash\lib\flash.js:21:5
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+[2023-05-28T10:50:10.325] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-28T10:50:45.618] [ERROR] default - Ruta: /carrito?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJpdmFuYm9ubm90QGhvdG1haWwuY29tIiwiaWF0IjoxNjg1MjgxNzkwLCJleHAiOjE2OTUyODE3OTB9.sfZvYKjaHH-P1it5V02ofqT2X40SqpPEDYpYclu30kM, método: GET. Sesión no iniciada
+[2023-05-28T11:22:43.529] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:13:48
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:47:12)
+[2023-05-28T11:23:21.191] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:13:48
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:47:12)
+[2023-05-28T11:23:31.969] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:13:48
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:47:12)
+[2023-05-28T11:30:31.469] [ERROR] default - TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\home.js:13:47
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\index.js:47:12)
+[2023-05-28T12:00:29.489] [ERROR] default - TypeError: Cannot read properties of null (reading '_doc')
+    at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\routes\web\auth.js:36:47
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[2023-05-28T12:01:36.471] [ERROR] default - Ruta: /carrito?token=yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iml2YW5ib25ub3RAZ21haWwuY29tIiwiaWF0IjoxNjg1Mjg2MDc2LCJleHAiOjE2OTUyODYwNzZ9.iztXV6Mn8ubEJCXm1R4w3qJFrWcRKexoczeNobR0Mbs, método: GET. Sesión no iniciada
+[2023-05-28T12:09:18.996] [ERROR] default - Ruta: /carrito?token=yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iml2YW5ib25ub3RAZ21haWwuY29tIiwiaWF0IjoxNjg1Mjg2MDc2LCJleHAiOjE2OTUyODYwNzZ9.iztXV6Mn8ubEJCXm1R4w3qJFrWcRKexoczeNobR0Mbs, método: GET. Sesión no iniciada
+[2023-05-28T12:09:50.408] [ERROR] default - Ruta: /carrito?token=yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iml2YW5ib25ub3RAZ21haWwuY29tIiwiaWF0IjoxNjg1Mjg2MDc2LCJleHAiOjE2OTUyODYwNzZ9.iztXV6Mn8ubEJCXm1R4w3qJFrWcRKexoczeNobR0Mbs, método: GET. Sesión no iniciada
+[2023-05-28T12:15:20.912] [ERROR] default - Error: Error: data and hash arguments required
+[2023-05-28T12:18:09.476] [ERROR] default - Ruta: /carrito?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iml2YW5ib25ub3RAZ21haWwuY29tIiwiaWF0IjoxNjg1Mjg2ODc3LCJleHAiOjE2OTUyODY4Nzd9.iLkU8Fcu43lH2XCf8Fl7Nvc2-dlEL6Lvf8ONb4DleHw, método: GET. Sesión no iniciada
+[2023-05-28T12:18:29.375] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-28T12:21:21.133] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-28T12:21:44.404] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-28T12:22:14.974] [ERROR] default - Error en la solicitud del carrito: TypeError: Cannot read properties of undefined (reading 'user')
+[2023-05-28T12:22:57.318] [ERROR] default - Error: Error: data and hash arguments required
+[2023-05-28T12:22:57.321] [ERROR] default - Ruta: /carrito?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iml2YW5ib25ub3RAZ21haWwuY29tIiwiaWF0IjoxNjg1Mjg2ODc3LCJleHAiOjE2OTUyODY4Nzd9.iLkU8Fcu43lH2XCf8Fl7Nvc2-dlEL6Lvf8ONb4DleHw, método: GET. No existe la cuenta
+[2023-05-28T12:23:41.365] [ERROR] default - Error: Error: data and hash arguments required
+[2023-05-28T12:23:41.367] [ERROR] default - Ruta: /carrito?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iml2YW5ib25ub3RAZ21haWwuY29tIiwiaWF0IjoxNjg1Mjg2ODc3LCJleHAiOjE2OTUyODY4Nzd9.iLkU8Fcu43lH2XCf8Fl7Nvc2-dlEL6Lvf8ONb4DleHw, método: GET. No existe la cuenta
+[2023-05-28T16:24:52.066] [ERROR] default - Error en la solicitud: TypeError: delCartDto is not a function
