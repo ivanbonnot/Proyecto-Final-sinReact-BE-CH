@@ -3,7 +3,6 @@ const path = require('path')
 const homeWebRouter = Router()
 const logger = require("../../log/log4js")
 
-require('../../middleware/auth');
 const  { generateJwtToken }  = require('../../middleware/auth')
 
 

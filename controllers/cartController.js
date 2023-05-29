@@ -11,11 +11,12 @@ const deleteProductFromCartController = ( itemId, userEmail ) =>  deleteProductF
 
 const deleteCartController = ( userEmail ) => deleteCartDto( userEmail )
 
-const newOrderController = ( userEmail ) => {
-  const cart =  getCartDto( userEmail )
+const newOrderController = async ( userEmail ) => {
+  const cart =  await getCartDto( userEmail )
+  console.log("controlador",cart.products.length)
   if ( cart.products.length === 0 ) return false
 
-  const products =  getAllProductsController()
+  const products =  await getAllProductsController()
   const orderArray = cart.products.map ( cartItem => {
     const productDetails = products.find( product => product.id === cartItem.id )
     return {
@@ -28,8 +29,8 @@ const newOrderController = ( userEmail ) => {
     userEmail: cart.userEmail,
     products: orderArray
   }
-  const responseOrder =  newOrderDto( order )
-  const responseDelete =  deleteCartDto( userEmail )
+  const responseOrder = await newOrderDto( order )
+  const responseDelete =  await deleteCartDto( userEmail )
   sendEmail({
     from: 'Administrador',
     to: emailAdmin,
@@ -53,7 +54,8 @@ const newOrderController = ( userEmail ) => {
       </tbody>
     </table>`
   })
-  return ( responseOrder & responseDelete) ? true : false
+  return responseOrder && responseDelete
+  
 }
 
 

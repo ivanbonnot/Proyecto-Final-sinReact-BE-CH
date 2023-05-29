@@ -1,4 +1,4 @@
-const { productModel, cartModel, userModel, chatModel } = require("../models/mongoDBModels")
+const { productModel, cartModel, userModel, chatModel, orderModel } = require("../models/mongoDBModels")
 const logger = require('../log/log4js')
 const bcrypt = require('bcrypt')
 
@@ -14,38 +14,38 @@ class mongoDBDAO {
             userEmail: user.username,
             products: [],
             address: user.address
-          })
-          await newCart.save()
+        })
+        await newCart.save()
     };
 
     getUsers = async () => await userModel.find({});
 
     checkUser = async (username, password) => {
-          try {
-        const userExist = await userModel.findOne({ username: username })
-        if ( userExist !== null ) {
-          if ( bcrypt.compareSync( password, userExist.password ) ) {
-            return { msg: 'Usuario y contrasena correctos', result: true }
-          } else {
-            logger.info(`Se ha intentado logear ${username} con una contrasena incorrecta`)
-            return { msg: 'Contrasena incorrecta', result: false }
-          }
-        } 
-        return { msg: 'No existe usuario', result: false }
-      } catch(err) {
-        logger.error(`Error: ${err}`)
-      }
+        try {
+            const userExist = await userModel.findOne({ username: username })
+            if (userExist !== null) {
+                if (bcrypt.compareSync(password, userExist.password)) {
+                    return { msg: 'Usuario y contrasena correctos', result: true }
+                } else {
+                    logger.info(`Se ha intentado logear ${username} con una contrasena incorrecta`)
+                    return { msg: 'Contrasena incorrecta', result: false }
+                }
+            }
+            return { msg: 'No existe usuario', result: false }
+        } catch (err) {
+            logger.error(`Error: ${err}`)
+        }
     }
 
-    async getUserBy( username ) {
+    async getUserBy(username) {
         try {
-          const userExiste = await userModel.findOne({username: username})
-          return userExiste ? userExiste : null
-        } catch(err) {
-          logger.error(`Error: ${err} al intentar recuperar el usuario id:${username} de la base de datos`)
-          return null
+            const userExiste = await userModel.findOne({ username: username })
+            return userExiste ? userExiste : null
+        } catch (err) {
+            logger.error(`Error: ${err} al intentar recuperar el usuario id:${username} de la base de datos`)
+            return null
         }
-      }
+    }
 
     deleteUser = async (id) => await userModel.deleteOne({ _id: id });
 
@@ -163,6 +163,20 @@ class mongoDBDAO {
         }
     }
 
+    async newOrder(order) {
+        try {
+            const ordernumber = await orderModel.countDocuments()
+            const newOrder = new orderModel({ ...order, orderNumber: ordernumber + 1 })
+            await newOrder.save()
+                .then(order => logger.info(`Se ha agregado a la base de datos orden de compra con id: ${order._id}`))
+                .catch(err => logger.warn(`Se ha produciodo error ${err} al intentar crear una nueva orden de compra`))
+            return true
+        } catch (err) {
+            logger.warn(`Error: ${err} al intentar crear el pedido.`)
+            return false
+        }
+    }
+
 
 
     //___CHATS___//
@@ -194,6 +208,16 @@ class mongoDBDAO {
             console.log(`Error: ${err}`)
         }
     }
+
+    async deleteAllChats() {
+        try {
+            await chatModel.deleteMany();
+        } catch (error) {
+            console.log(`Error: ${error}`)
+        }
+
+    }
+
 }
 
 module.exports = mongoDBDAO;

@@ -6,5 +6,6 @@ const getAllChatsDTO = () => chats.getAllChats();
 
 const addChatDTO = (message) => chats.saveChat(message);
  
+const deleteAllChatsDTO = () => chats.deleteAllChats()
 
-module.exports = { getAllChatsDTO, addChatDTO };
+module.exports = { getAllChatsDTO, addChatDTO, deleteAllChatsDTO };

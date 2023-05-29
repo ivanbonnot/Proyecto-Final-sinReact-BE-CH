@@ -1444,3 +1444,19 @@
     at C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\connect-flash\lib\flash.js:21:5
     at Layer.handle [as handle_request] (C:\Users\54344\Desktop\Coder House\Curso BackEnd\Final Sin React\node_modules\express\lib\router\layer.js:95:5)
 [2023-05-28T21:41:35.261] [WARN] default - El JWT ya no es valido, token: undefined
+[2023-05-29T19:32:23.895] [ERROR] default - El método y la ruta son: GET /carrito/confirm/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iml2YW5ib25ub3RAZ21haWwuY29tIiwiaWF0IjoxNjg1Mzk4OTc3LCJleHAiOjE2OTUzOTg5Nzd9.W95B7fSEQ5lC5ja_xr65rIZoKoEzI_mnmO9w63a9QLA. Intento de acceso sin loggueo.
+[2023-05-29T19:33:05.401] [ERROR] default - El método y la ruta son: POST /carrito/confirm/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iml2YW5ib25ub3RAZ21haWwuY29tIiwiaWF0IjoxNjg1Mzk4OTc3LCJleHAiOjE2OTUzOTg5Nzd9.W95B7fSEQ5lC5ja_xr65rIZoKoEzI_mnmO9w63a9QLA. Intento de acceso sin loggueo.
+[2023-05-29T19:34:43.207] [ERROR] default - El método y la ruta son: POST /carrito/confirm/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iml2YW5ib25ub3RAZ21haWwuY29tIiwiaWF0IjoxNjg1Mzk4OTc3LCJleHAiOjE2OTUzOTg5Nzd9.W95B7fSEQ5lC5ja_xr65rIZoKoEzI_mnmO9w63a9QLA. Intento de acceso sin loggueo.
+[2023-05-29T19:35:23.606] [ERROR] default - El método y la ruta son: POST /carrito/confirm/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iml2YW5ib25ub3RAZ21haWwuY29tIiwiaWF0IjoxNjg1Mzk4OTc3LCJleHAiOjE2OTUzOTg5Nzd9.W95B7fSEQ5lC5ja_xr65rIZoKoEzI_mnmO9w63a9QLA. Intento de acceso sin loggueo.
+[2023-05-29T19:46:43.929] [WARN] default - Error: TypeError: Cannot read properties of undefined (reading 'length') al generar pedido.
+[2023-05-29T19:47:48.517] [WARN] default - Error: TypeError: Cannot read properties of undefined (reading 'map') al generar pedido.
+[2023-05-29T19:52:44.119] [WARN] default - Error: TypeError: products.find is not a function al generar pedido.
+[2023-05-29T19:53:51.265] [WARN] default - Error: TypeError: Cannot read properties of undefined (reading 'products') al generar pedido.
+[2023-05-29T19:54:02.932] [WARN] default - Error: TypeError: products.find is not a function al generar pedido.
+[2023-05-29T19:57:59.824] [WARN] default - Error: TypeError: products.find is not a function al generar pedido.
+[2023-05-29T20:10:28.678] [WARN] default - Error: TypeError: products.find is not a function al generar pedido.
+[2023-05-29T20:18:27.442] [WARN] default - Error: ReferenceError: orderModel is not defined al intentar crear el pedido.
+[2023-05-29T20:19:09.994] [WARN] default - Se ha produciodo error ValidationError: orderNumber: Path `orderNumber` is required. al intentar crear una nueva orden de compra
+[2023-05-29T20:24:58.275] [WARN] default - Se ha produciodo error ValidationError: orderNumber: Path `orderNumber` is required. al intentar crear una nueva orden de compra
+[2023-05-29T20:24:58.285] [WARN] default - Error: ReferenceError: responseDelete is not defined al generar pedido.
+[2023-05-29T20:25:41.398] [WARN] default - Se ha produciodo error ValidationError: orderNumber: Path `orderNumber` is required. al intentar crear una nueva orden de compra

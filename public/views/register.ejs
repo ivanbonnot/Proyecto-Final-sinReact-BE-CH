@@ -24,7 +24,6 @@ https://cdn.jsdelivr.net/npm/normalizr@3.6.2/dist/normalizr.browser.min.js
     <div class="container mt-3">
         <div class="jumbotron">
             <h1>Register de Usuario</h1>
-            <br>
             <form action="/register" method="post" autocomplete="off">
                 <div>
                     <% if (message.length> 0) { %>
@@ -39,11 +38,18 @@ https://cdn.jsdelivr.net/npm/normalizr@3.6.2/dist/normalizr.browser.min.js
                         id="id_email">
                 </div>
                 <div>
-                    <p>Password</p>
+                    <p>Contraseña</p>
                     <div class="password">
                         <input type="password" name="password" autocomplete="current-password" required=""
                             id="id_password">
                         <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+                    </div>
+                </div><div>
+                    <p>Ingrese la contraseña nuevamente</p>
+                    <div class="password">
+                        <input type="password" name="password_verification" autocomplete="current-password" required=""
+                            id="id_password_ver">
+                        <i class="far fa-eye" id="togglePassword_ver" style="margin-left: -30px; cursor: pointer;"></i>
                     </div>
                 </div>
                 <div>
@@ -52,14 +58,10 @@ https://cdn.jsdelivr.net/npm/normalizr@3.6.2/dist/normalizr.browser.min.js
                 </div>
                 <div>
                     <p>Teléfono</p>
-                    <input type="tel" name="phone" pattern="^\+(?:[0-9] ?){6,14}[0-9]$"
-                        placeholder="+1 123 456 7890" required>
+                    <input type="tel" name="phone" pattern="^\(?:[0-9] ?){6,14}[0-9]$"
+                        placeholder="1 123 456 7890" required>
                 </div>
-                <div>
-                    <p>Subir foto o avatar</p>
-                    <input type="file" name="avatar" accept="image/*">
-                </div>
-
+                
                 <button type="submit" class="btn btn-primary">Register</button>
 
             </form>

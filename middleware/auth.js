@@ -31,10 +31,11 @@ passport.use(
   new LocalStrategy(
     async ( username, password, done ) => {
       const checkUser = await checkUserController( username, password )
-      console.log(checkUser)
+
       if (checkUser.result === true) {
         logger.info(`Se intento registrar un usuario ya existente`)
-        return done( null, false, { message: 'El usuario o el email ya existe' } )  
+        return done( null, false, { message: 'El email ya existe' } )
+        
       } else {
         return done( null, { username: username } )
       }
@@ -52,6 +53,9 @@ passport.deserializeUser( function(username, done) {
 })
 
 
+
+//_____Autenticacion JWT_____//
+
 passport.use('jwt', new JwtStrategy({ jwtFromRequest: ExtractJwt.fromUrlQueryParameter('token'), secretOrKey: jwtSecret },
   async (payload, done) => {
     try {
@@ -63,9 +67,6 @@ passport.use('jwt', new JwtStrategy({ jwtFromRequest: ExtractJwt.fromUrlQueryPar
   }
 )
 )
-
-
-
 
 
 const generateJwtToken = (username) => {

@@ -64,24 +64,26 @@ authWebRouter.post('/register', passport.authenticate('register', { failureRedir
     try {
         req.session.passport.user = req.user.username
         req.session.username = req.user.username;
-        const { username, password, address, phone, avatar } = req.body;
+        const { username, password, password_verification, address, phone } = req.body;
 
         const user = await getUserController(username)
 
         if (user) {
             logger.info("Usuario existente ")
-        } else {
-
+        } else if (password === password_verification) {
             const newUser = {
                 timestamp: Date.now(),
                 username,
                 password,
                 address,
-                phone,
-                avatar
+                phone
             }
-
             await newUserController(newUser)
+            
+        } else {
+            logger.info("La contraseña no coincide")
+            req.flash('error', 'La contraseña no coincide');
+            return res.redirect('/register');
         }
 
         res.redirect('/login');

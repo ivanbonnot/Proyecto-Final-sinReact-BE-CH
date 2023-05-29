@@ -40,7 +40,7 @@ const baseProcces = () => {
     const httpServer = new HTTPServer(app);
     const io = new IOServer(httpServer);
 
-    const { addChatController, getAllChatsController} = require('../controllers/chatsController')
+    const { addChatController, getAllChatsController, deleteAllChatsController} = require('../controllers/chatsController')
 
     //Settings
     app.set('port', process.env.PORT || 8080)
@@ -99,6 +99,10 @@ const baseProcces = () => {
             addChatController(mensaje)
             io.sockets.emit('mensajes', await getAllChatsController());
         })
+
+        socket.on('borrarMensajes', async =>
+         deleteAllChatsController())
+         io.sockets.emit('mensajes', await getAllChatsController());
     });
 
 }

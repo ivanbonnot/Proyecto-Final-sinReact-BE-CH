@@ -3,7 +3,7 @@ const sendMessage = require('../../helpers/twilioMessage')
 const sendEmail = require('../../helpers/nodeMailer')
 const logger = require('../../log/log4js')
 
-const {passport, isDeletedJWT}  = require('../../middleware/auth')
+const { passport, isDeletedJWT } = require('../../middleware/auth')
 
 const { getUserController } = require('../../controllers/usersControler');
 const { getCartController, addProductToCartController, deleteProductFromCartController, deleteCartController, newOrderController } = require('../../controllers/cartController');
@@ -62,8 +62,8 @@ cartRouter.delete("/carrito/:id", isDeletedJWT, passport.authenticate('jwt', { s
   const userEmail = req.user.username
 
   try {
-    if ( userEmail ) {
-      const cart = await getCartController( userEmail );
+    if (userEmail) {
+      const cart = await getCartController(userEmail);
 
       if (!cart) {
         logger.error(`El método y la ruta son: ${method} ${url}. Carrito no encontrado.`);
@@ -71,7 +71,7 @@ cartRouter.delete("/carrito/:id", isDeletedJWT, passport.authenticate('jwt', { s
         return;
       }
 
-      const deleteProd = await deleteProductFromCartController(req.params.id, userEmail );
+      const deleteProd = await deleteProductFromCartController(req.params.id, userEmail);
 
       logger.info(`El método y la ruta son: ${method} ${url}.`);
       res.json(deleteProd);
@@ -119,52 +119,28 @@ cartRouter.delete("/carrito", isDeletedJWT, passport.authenticate('jwt', { sessi
 });
 
 
-cartRouter.get("/carrito/confirm", isDeletedJWT, passport.authenticate('jwt', { session: false }), async (req, res) => {
+cartRouter.post("/carrito/confirm", isDeletedJWT, passport.authenticate('jwt', { session: false }), async (req, res) => {
   const { url, method } = req;
-
   const userEmail = req.user.username
-
-  if (userEmail) {
-    const user = await getUserController(userEmail);
-    const cart = await getCartController(userEmail);
-
-    let messageToSend = `Productos:`;
-    let html = `<h1>Productos:</h1>`;
-
-    for (const productCart of cart.products) {
-      const product = await getProductByIdController(productCart.id);
-
-      messageToSend += `
-      - nombre: ${product.title}, precio: ${product.price}`;
-
-      html += `
-      <h2>- nombre: ${product.title}, precio: ${product.price}</h2>`;
+  console.log(userEmail)
+  try {
+    if (userEmail) {
+      const order = await newOrderController(userEmail)
+      logger.info(`Ruta: /api${req.url}, metodo: ${req.method}`)
+      res.status(200).send(order)
+    } else {
+      logger.error(
+        `El método y la ruta son: ${method} ${url}. Intento de acceso sin loggueo.`
+      );
     }
-
-    await sendMessage(user.phone, messageToSend);
-
-    await sendMessage(
-      twilioWspNumber,
-      messageToSend,
-      true
-    );
-
-    await sendEmail(
-      emailUser,
-      messageToSend,
-      `Nuevo pedido de ${user.username} - ${emailUser}`,
-      html
-    );
-
-    res.send(messageToSend);
-    return;
   }
 
-  logger.error(
-    `El método y la ruta son: ${method} ${url}. Intento de acceso sin loggueo.`
-  );
+  catch (error) {
+    logger.warn(`Error: ${error} al generar pedido.`)
+    res.redirect(`info/error/Error al generar pedido: ${error}`)
+  }
 
-  res.redirect("/login");
+  //res.redirect("/");
 });
 
 

@@ -1,5 +1,7 @@
 const formAgregarProducto = document.getElementById("agregarProducto");
 const formPublicarMensaje = document.getElementById("formPublicarMensaje");
+const formBorrarChat = document.getElementById("formBorrarChat");
+
 const socket = io.connect();
 
 //------------------------------------------------------------------------------------
@@ -48,35 +50,30 @@ function makeHtmlTable(productos) {
 
 //-------------------------------------------------------------------------------------
 
-const inputEmail = document.getElementById("inputEmail");
-const inputName = document.getElementById("inputName");
-const inputLastName = document.getElementById("inputLastName");
-const inputAge = document.getElementById("inputAge");
-const inputAlias = document.getElementById("inputAlias");
-const inputAvatar = document.getElementById("inputAvatar");
 
+const inputName = document.getElementById("inputName");
 const inputMensaje = document.getElementById("inputMensaje");
-const btnEnviar = document.getElementById("btnEnviar");
+
 
 formPublicarMensaje.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const mensaje = {
-        author: {
-            email: inputEmail.value,
-            name: inputName.value,
-            surname: inputLastName.value,
-            age: inputAge.value,
-            nickname: inputAlias.value,
-            avatar: inputAvatar.value,
-        },
+        name: inputName.value,
         text: inputMensaje.value,
     };
 
 
     socket.emit("nuevoMensaje", mensaje);
-    //   formPublicarMensaje.reset();
+    formPublicarMensaje.reset();
     inputMensaje.focus();
+});
+
+
+formBorrarChat.addEventListener("submit", (e) => {
+    e.preventDefault();
+    socket.emit("borrarMensajes");
+    formPublicarMensaje.reset();
 });
 
 socket.on("mensajes", (mensajes) => {
@@ -90,7 +87,7 @@ function makeHtmlList(mensajes) {
     return mensajes.mensajes.map((mensaje) => {
         return `
             <div>
-                <b style="color:blue;">${mensaje.author.name}</b>
+                <b style="color:blue;">${mensaje.name}</b>
                 [<span style="color:brown;">${mensaje.date}</span>] :
                 <i style="color:green;">${mensaje.text}</i>
             </div>
