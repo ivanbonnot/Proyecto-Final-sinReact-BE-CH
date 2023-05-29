@@ -8,13 +8,13 @@ const {
 } = require("../../controllers/productsController");
 
 const productsRouter = Router();
-const passport = require('../../middleware/auth')
+const {passport, isDeletedJWT} = require('../../middleware/auth')
 const logger = require('../../log/log4js')
 
 const adm = true;
 
 
-productsRouter.get("/productos", passport.authenticate('jwt', { session: false }), async (req, res) => {
+productsRouter.get("/productos", isDeletedJWT, passport.authenticate('jwt', { session: false }), async (req, res) => {
 
   try {
     const products = await getAllProductsController();
@@ -27,7 +27,7 @@ productsRouter.get("/productos", passport.authenticate('jwt', { session: false }
 });
 
 
-productsRouter.get("/productos/:id", passport.authenticate('jwt', { session: false }), async (req, res) => {
+productsRouter.get("/productos/:id", isDeletedJWT, passport.authenticate('jwt', { session: false }), async (req, res) => {
   const {method, url} = req
   const { id } = req.params;
 
@@ -48,7 +48,7 @@ productsRouter.get("/productos/:id", passport.authenticate('jwt', { session: fal
 });
 
 
-productsRouter.post("/productos", passport.authenticate('jwt', { session: false }), async (req, res) => {
+productsRouter.post("/productos", isDeletedJWT, passport.authenticate('jwt', { session: false }), async (req, res) => {
   const {method, url} = req
 
   try {
@@ -83,7 +83,7 @@ productsRouter.post("/productos", passport.authenticate('jwt', { session: false 
 });
 
 
-productsRouter.put("/productos/:id", passport.authenticate('jwt', { session: false }), async (req, res) => {
+productsRouter.put("/productos/:id", isDeletedJWT, passport.authenticate('jwt', { session: false }), async (req, res) => {
   const {method, url} = req
 
   try {
@@ -122,7 +122,7 @@ productsRouter.put("/productos/:id", passport.authenticate('jwt', { session: fal
 });
 
 
-productsRouter.delete("/productos/:id", passport.authenticate('jwt', { session: false }), async (req, res) => {
+productsRouter.delete("/productos/:id", isDeletedJWT, passport.authenticate('jwt', { session: false }), async (req, res) => {
 const {method, url} = req
 
   try {

@@ -7,7 +7,7 @@ const mongoStore = require('connect-mongo')
 
 const cluster = require('cluster')
 const numCPUs = require('os').cpus().length
-const {config, mongodbSecretPin, userSessionTime, mongodbCredentialSession, mongodbUri} = require('../config/enviroment')
+const {config, mongodbSecretPin, userSessionTime, mongodbUri} = require('../config/enviroment')
 
 require('dotenv').config()
 
@@ -27,10 +27,10 @@ const baseProcces = () => {
     const { Server: HTTPServer } = require('http');
     const { Server: IOServer } = require('socket.io');
 
-    const infoRouter = require('../routes/api/info')
+    const infoRouter = require('../routes/api/infoRouter')
     const productsRouter = require("../routes/api/productRouter");
-    const authWebRouter = require('../routes/web/auth')
-    const homeWebRouter = require('../routes/web/home')
+    const authWebRouter = require('../routes/web/authRouter')
+    const homeWebRouter = require('../routes/web/homeRouter')
     const cartRouter = require("../routes/api/cartRouter")
 
     const connectToDb = require("../config/connectToDB");

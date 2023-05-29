@@ -6,12 +6,7 @@ const  logger  = require('../log/log4js')
 
 const jwt = require('jsonwebtoken')
 const { jwtSecret, jwtExpires } = require('../config/enviroment')
-
-const { compareSync, hashSync } = require('bcrypt');
 const { checkUserController, getUserController } = require("../controllers/usersControler");
-
-const users = [];
-let userMongo = [];
 
 
 
@@ -69,11 +64,11 @@ passport.use('jwt', new JwtStrategy({ jwtFromRequest: ExtractJwt.fromUrlQueryPar
 )
 )
 
-module.exports =  passport 
 
 
 
-module.exports.generateJwtToken = (username) => {
+
+const generateJwtToken = (username) => {
   const payload = {
     username: username
   }
@@ -84,13 +79,13 @@ module.exports.generateJwtToken = (username) => {
 }
 
 
-let blacklistJWT = []
+let deletedJWT = []
 
-module.exports.addDeleteJWT = (token) => blacklistJWT.push(token)
+const destroyJWT = (token) => deletedJWT.push(token)
 
-module.exports.isDeleteJWT = (req, res, next) => {
-  if (blacklistJWT.includes(req.headers.authorization)) {
-    logger.warn(`El JWT ya no es valido, token: ${req.headers.authorization}`)
+const isDeletedJWT = (req, res, next) => {
+  if (deletedJWT.includes(req.headers.authorization)) {
+    logger.warn(`JWT dejo de ser valido, token: ${req.headers.authorization}`)
     res.redirect(`info/error/JWT ya no es valido: ${req.headers.authorization}`)
   } else {
     next()
@@ -98,4 +93,4 @@ module.exports.isDeleteJWT = (req, res, next) => {
 }
 
 
-
+module.exports =   {passport, generateJwtToken, destroyJWT,isDeletedJWT}

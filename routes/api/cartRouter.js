@@ -3,7 +3,7 @@ const sendMessage = require('../../helpers/twilioMessage')
 const sendEmail = require('../../helpers/nodeMailer')
 const logger = require('../../log/log4js')
 
-const passport = require('../../middleware/auth')
+const {passport, isDeletedJWT}  = require('../../middleware/auth')
 
 const { getUserController } = require('../../controllers/usersControler');
 const { getCartController, addProductToCartController, deleteProductFromCartController, deleteCartController, newOrderController } = require('../../controllers/cartController');
@@ -12,7 +12,7 @@ const { twilioWspNumber } = require('../../config/enviroment');
 const cartRouter = Router();
 
 
-cartRouter.get("/carrito", passport.authenticate('jwt', { session: false }), async (req, res) => {
+cartRouter.get("/carrito", isDeletedJWT, passport.authenticate('jwt', { session: false }), async (req, res) => {
   const { method, url } = req;
 
   try {
@@ -40,7 +40,7 @@ cartRouter.get("/carrito", passport.authenticate('jwt', { session: false }), asy
 });
 
 
-cartRouter.post("/carrito", passport.authenticate('jwt', { session: false }), async (req, res) => {
+cartRouter.post("/carrito", isDeletedJWT, passport.authenticate('jwt', { session: false }), async (req, res) => {
   const { url, method, } = req;
   const userEmail = req.user.username
 
@@ -57,7 +57,7 @@ cartRouter.post("/carrito", passport.authenticate('jwt', { session: false }), as
 });
 
 
-cartRouter.delete("/carrito/:id", passport.authenticate('jwt', { session: false }), async (req, res) => {
+cartRouter.delete("/carrito/:id", isDeletedJWT, passport.authenticate('jwt', { session: false }), async (req, res) => {
   const { url, method } = req;
   const userEmail = req.user.username
 
@@ -88,7 +88,7 @@ cartRouter.delete("/carrito/:id", passport.authenticate('jwt', { session: false 
 });
 
 
-cartRouter.delete("/carrito", passport.authenticate('jwt', { session: false }), async (req, res) => {
+cartRouter.delete("/carrito", isDeletedJWT, passport.authenticate('jwt', { session: false }), async (req, res) => {
   const { url, method } = req;
   const userEmail = req.user.username
 
@@ -119,7 +119,7 @@ cartRouter.delete("/carrito", passport.authenticate('jwt', { session: false }), 
 });
 
 
-cartRouter.get("/carrito/confirm", passport.authenticate('jwt', { session: false }), async (req, res) => {
+cartRouter.get("/carrito/confirm", isDeletedJWT, passport.authenticate('jwt', { session: false }), async (req, res) => {
   const { url, method } = req;
 
   const userEmail = req.user.username

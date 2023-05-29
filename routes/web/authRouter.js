@@ -6,7 +6,7 @@ const logger = require("../../log/log4js")
 
 const {  newUserController, getUserController } = require('../../controllers/usersControler')
 require('../../middleware/auth');
-const { generateJwtToken } = require('../../middleware/auth')
+const { generateJwtToken, destroyJWT } = require('../../middleware/auth')
 
 const authWebRouter = Router()
 authWebRouter.use(flash())
@@ -99,6 +99,8 @@ authWebRouter.get('/logout', (req, res) => {
     try {
         const nombre = req.session.passport.user
         if (nombre) {
+            destroyJWT(req.headers.authorization)
+            console.log(req.headers)
             req.session.destroy(err => {
                 if (!err) {
                     res.render(path.join(process.cwd(), './public/views/logout.ejs'), { nombre })
