@@ -12,8 +12,9 @@ const deleteProductFromCartController = ( itemId, userEmail ) =>  deleteProductF
 const deleteCartController = ( userEmail ) => deleteCartDto( userEmail )
 
 const newOrderController = async ( userEmail ) => {
+  
   const cart =  await getCartDto( userEmail )
-  console.log("controlador",cart.products.length)
+
   if ( cart.products.length === 0 ) return false
 
   const products =  await getAllProductsController()
