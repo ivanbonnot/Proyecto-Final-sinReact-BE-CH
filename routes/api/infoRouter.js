@@ -1,21 +1,27 @@
 const { Router } = require('express');
 const infoRouter = Router();
 const logger = require('../../log/log4js')
+const { port,
+    mongodbCredentialSession,
+    emailAdmin,
+    userSessionTime } = require('../../config/enviroment');
 
-infoRouter.get('/info', async ( req, res) => {
+infoRouter.get('/info', async (req, res) => {
+    try {
+        const environment = {
+            port,
+            mongodbCredentialSession,
+            emailAdmin,
+            userSessionTime
+        }
+        
+        res.render('info.hbs', { environment });
+        logger.info(`Ruta: /info, metodo: ${req.method}`)
 
-    const info = {
-        cwd: `Directorio actual de trabajo: ${process.cwd()}`,
-        pid: 'Id del proceso: '+ process.pid,
-        version: 'Version de Node: ' + process.version,
-        title: 'Titulo del proceso: ' + process.title,
-        platform: 'Sistema operativo: ' + process.platform,
-        memory: 'Uso de la memoria: ' + process.memoryUsage()
+    } catch (error) {
+        logger.error(`Error en la solicitud de info del servidor: ${error}`);
+        return res.status(500).json({ result: "error" });
     }
-
-    
-    logger.info(`Ruta: /info, metodo: ${req.method}`)
-    res.send(JSON.stringify(info))
 })
 
 module.exports = infoRouter

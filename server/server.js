@@ -4,17 +4,20 @@ const compression = require('compression')
 const logger = require('../log/log4js')
 const expressSession = require('express-session')
 const mongoStore = require('connect-mongo')
+const { engine } = require('express-handlebars');
+const path = require('path');
+
 
 const cluster = require('cluster')
 const numCPUs = require('os').cpus().length
-const {config, mongodbSecretPin, userSessionTime, mongodbUri} = require('../config/enviroment')
+const { config, mongodbSecretPin, userSessionTime, mongodbUri } = require('../config/enviroment')
 
 require('dotenv').config()
 
 const advancedOptions = {
     useNewUrlParser: true,
     useUnifiedTopology: true
-  }
+}
 
 
 const baseProcces = () => {
@@ -37,36 +40,42 @@ const baseProcces = () => {
 
     const app = express();
 
+
     const httpServer = new HTTPServer(app);
     const io = new IOServer(httpServer);
 
-    const { addChatController, getAllChatsController, deleteAllChatsController} = require('../controllers/chatsController')
+    const { addChatController, getAllChatsController, deleteAllChatsController } = require('../controllers/chatsController')
 
     //Settings
+    app.engine('hbs', engine());
+    app.set('view engine', 'hbs');
+    //app.set('views', 'views');
     app.set('port', process.env.PORT || 8080)
     app.set('json spaces', 2)
+    
 
     //Middlewares
+    app.set(express.static(path.join(__dirname, 'public')));
     app.use(compression())
     app.use(morgan('dev'))
     app.use(express.urlencoded({ extended: true }))
     app.use(express.json())
     //app.use(express.static(staticFiles))
-    app.use(express.static('./public'))
+    //app.use(express.static('./public'))
 
 
     app.use(expressSession({
         store: mongoStore.create({
-          mongoUrl: mongodbUri,
-          mongoOptions: advancedOptions
+            mongoUrl: mongodbUri,
+            mongoOptions: advancedOptions
         }),
         secret: mongodbSecretPin,
         resave: false,
         saveUninitialized: false,
         cookie: {
-          maxAge: Number(userSessionTime)
+            maxAge: Number(userSessionTime)
         }
-      }))
+    }))
 
 
     const PORT = 8080
@@ -76,12 +85,11 @@ const baseProcces = () => {
     })
     server.on('error', error => logger.error(`Error en servidor ${error}`))
 
-    
+
     //Routes
     app.use("/", infoRouter)
     app.use("/", productsRouter)
     app.use("/", cartRouter)
-
     //__ WebServ Routes __//
     app.use("/", authWebRouter)
     app.use("/", homeWebRouter)
@@ -100,9 +108,11 @@ const baseProcces = () => {
             io.sockets.emit('mensajes', await getAllChatsController());
         })
 
-        socket.on('borrarMensajes', async =>
-         deleteAllChatsController())
-         io.sockets.emit('mensajes', await getAllChatsController());
+        socket.on('borrarMensajes', async => {
+            deleteAllChatsController()
+            io.sockets.emit('mensajes', getAllChatsController());
+        })
+            
     });
 
 }

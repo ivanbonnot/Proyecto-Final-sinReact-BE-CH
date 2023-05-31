@@ -1,14 +1,9 @@
 const { Router } = require('express');
-const sendMessage = require('../../helpers/twilioMessage')
-const sendEmail = require('../../helpers/nodeMailer')
 const logger = require('../../log/log4js')
-
 const { passport, isDeletedJWT } = require('../../middleware/auth')
-
 const { getUserController } = require('../../controllers/usersControler');
 const { getCartController, addProductToCartController, deleteProductFromCartController, deleteCartController, newOrderController } = require('../../controllers/cartController');
-const { getProductByIdController } = require('../../controllers/productsController');
-const { twilioWspNumber } = require('../../config/enviroment');
+
 const cartRouter = Router();
 
 

@@ -1,4 +1,5 @@
 const parseArgs = require('minimist')(process.argv.slice(2)) // ejemplo -> nodemon src/server.js -p 8080 -m FORK
+
 module.exports.config = {
   port: parseArgs.p, // puerto escucha
   mode: parseArgs.m, // mode 'FORK' (defecto) o 'CLUSTER'
@@ -7,6 +8,7 @@ module.exports.config = {
 
 require('dotenv').config()
 module.exports.staticFiles = process.env.STATICFILES
+module.exports.port = process.env.PORT
 
 module.exports.mongodbUri = process.env.MONGODB_URI
 module.exports.mongodbCredentialSession = process.env.MONGODB_CREDENTIAL_SESSION
