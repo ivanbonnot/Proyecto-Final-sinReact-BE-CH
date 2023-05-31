@@ -165,8 +165,8 @@ class mongoDBDAO {
 
     async newOrder(order) {
         try {
-            const ordernumber = await orderModel.countDocuments()
-            const newOrder = new orderModel({ ...order, orderNumber: ordernumber + 1 })
+            const orderNumber = await orderModel.countDocuments()
+            const newOrder = new orderModel({ ...order, orderNumber: orderNumber + 1 })
             await newOrder.save()
                 .then(order => logger.info(`Se ha agregado a la base de datos orden de compra con id: ${order._id}`))
                 .catch(err => logger.warn(`Se ha produciodo error ${err} al intentar crear una nueva orden de compra`))

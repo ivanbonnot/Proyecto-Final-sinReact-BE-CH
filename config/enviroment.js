@@ -18,10 +18,10 @@ module.exports.userSessionTime = process.env.USER_SESSION_TIME
 module.exports.jwtSecret = process.env.JWT_SECRET
 module.exports.jwtExpires = process.env.JWT_EXPIRES
 
-module.exports.emailNodeMailer = process.env.EMAIL_NODEMAILER
 module.exports.emailHost = process.env.EMAIL_HOST
-module.exports.emailUser = process.env.EMAIL_USER
+module.exports.emailNodeMailer = process.env.EMAIL_NODEMAILER
 module.exports.emailPassword = process.env.EMAIL_PASSWORD
+module.exports.emailUser = process.env.EMAIL_USER
 module.exports.emailAdmin = process.env.EMAIL_ADMIN
 
 module.exports.twilioAccountSid = process.env.TWILIO_ACCOUNT_SID

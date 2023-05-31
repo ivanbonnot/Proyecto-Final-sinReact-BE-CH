@@ -1460,3 +1460,8 @@
 [2023-05-29T20:24:58.275] [WARN] default - Se ha produciodo error ValidationError: orderNumber: Path `orderNumber` is required. al intentar crear una nueva orden de compra
 [2023-05-29T20:24:58.285] [WARN] default - Error: ReferenceError: responseDelete is not defined al generar pedido.
 [2023-05-29T20:25:41.398] [WARN] default - Se ha produciodo error ValidationError: orderNumber: Path `orderNumber` is required. al intentar crear una nueva orden de compra
+[2023-05-31T16:54:51.821] [WARN] default - JWT dejo de ser valido, token: undefined
+[2023-05-31T16:55:10.934] [WARN] default - JWT dejo de ser valido, token: undefined
+[2023-05-31T16:56:58.019] [WARN] default - JWT dejo de ser valido, token: undefined
+[2023-05-31T16:57:31.585] [WARN] default - JWT dejo de ser valido, token: undefined
+[2023-05-31T17:02:59.804] [WARN] default - JWT dejo de ser valido, token: undefined

@@ -4,17 +4,17 @@ const { emailNodeMailer, emailPassword, emailHost } = require('../config/envirom
 const sendEmail = async (to, body, subject, html) => {
 
   const transporter = nodemailer.createTransport({
-    host: `${emailHost}`,
+    host: emailHost,
     port: 587,
     auth: {
-      user: `${emailNodeMailer}`,
-      pass: `${emailPassword}`
+      user: emailNodeMailer,
+      pass: emailPassword
     }
   });
 
   try {
     const info = await transporter.sendMail({
-      from: `NodeMailer ${emailNodeMailer}`,
+      from: emailNodeMailer,
       to,
       subject,
       text: body,
