@@ -37,10 +37,6 @@ const newOrderController = async (userEmail) => {
   <table>
     <tbody>
       <tr>
-        <td>Username</td>
-        <td>${userEmail}</td>
-      </tr>
-      <tr>
         <td>Email del usuario</td>
         <td>${cart.userEmail}</td>
       </tr>
