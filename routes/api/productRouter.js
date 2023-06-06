@@ -56,7 +56,7 @@ productsRouter.post("/productos", isDeletedJWT, passport.authenticate('jwt', { s
       const { title, description, code, thumbnail, price, stock } = req.body;
 
       if (!title || !description || !code || !thumbnail || !price || !stock) {
-        return res.status(400).send({ error: "Falta completar campos" });
+        return res.status(400).json({ error: "Falta completar campos" });
       }
 
       const product = {
@@ -105,7 +105,7 @@ productsRouter.put("/productos/:id", isDeletedJWT, passport.authenticate('jwt', 
 
       if (productById) {
         await updateProductController(id, productUpdate);
-        res.send(productUpdate);
+        res.json(productUpdate);
       } else {
         logger.error(`Ruta: ${url}, método: ${method}. No existe el producto:${id}`);
         return res.status(403).json({ result: "error" });

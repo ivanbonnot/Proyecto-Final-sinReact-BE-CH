@@ -3,3 +3,10 @@ node_modules
 /.env
 .deleted.js
 .deleted.
+
+*.log
+.log
+
+
+*.conf
+.conf

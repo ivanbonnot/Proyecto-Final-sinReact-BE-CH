@@ -122,7 +122,7 @@ cartRouter.post("/carrito/confirm", isDeletedJWT, passport.authenticate('jwt', {
     if (userEmail) {
       const order = await newOrderController(userEmail)
       logger.info(`Ruta: /api${req.url}, metodo: ${req.method}`)
-      res.status(200).send(order)
+      res.status(200).json(order)
     } else {
       logger.error(
         `El método y la ruta son: ${method} ${url}. Intento de acceso sin loggueo.`

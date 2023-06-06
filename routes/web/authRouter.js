@@ -24,7 +24,7 @@ authWebRouter.get('/login', (req, res) => {
         }
     } catch(error) {
         logger.error(error);
-        res.status(500).send('Error interno del servidor');
+        res.status(500).json('Error interno del servidor');
     }
 })
 
@@ -34,11 +34,11 @@ authWebRouter.post('/login', passport.authenticate('login', { failureRedirect: '
         req.session.passport.user = req.user.username
         let userData = await getUserController(req.session.passport.user)
         userData = Object.assign({}, userData._doc, { token: generateJwtToken(req.session.passport.user) })
-        res.status(200).send(userData)
+        res.status(200).json(userData)
         //res.redirect('/')
     } catch(error) {
         logger.error(error);
-        res.status(500).send('Error interno del servidor');
+        res.status(500).json('Error interno del servidor');
     }
 });
 
@@ -55,7 +55,7 @@ authWebRouter.get('/register', (req, res) => {
         }
     } catch(error) {
         logger.error(error);
-        res.status(500).send('Error interno del servidor');
+        res.status(500).json('Error interno del servidor');
     }
 })
 
@@ -89,7 +89,7 @@ authWebRouter.post('/register', passport.authenticate('register', { failureRedir
         res.redirect('/login');
     } catch(error) {
         logger.error(error);
-        res.status(500).send('Error interno del servidor');
+        res.status(500).json('Error interno del servidor');
     }
 });
 
@@ -115,7 +115,7 @@ authWebRouter.get('/logout', (req, res) => {
         }
     } catch(error) {
         logger.error(error);
-        res.status(500).send('Error interno del servidor');
+        res.status(500).json('Error interno del servidor');
     }
 })
 

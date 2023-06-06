@@ -13,8 +13,8 @@ homeWebRouter.get('/', (req, res) => {
         let userData = ''
         if (username) {
             logger.info(`Usuario ${username} logeado`)
-            userData = Object.assign({}, userData._doc, { token: generateJwtToken(username) })
-            logger.info(userData)
+            // userData = Object.assign({}, userData._doc, { token: generateJwtToken(username) })
+            // logger.info(userData)
             //res.status(200).send(userData)
             res.render(path.join(process.cwd(), './public/views/home.ejs'), { username })
         } else {
@@ -23,7 +23,7 @@ homeWebRouter.get('/', (req, res) => {
         }
     } catch(error) {
         logger.error(error);
-        res.status(500).send('Error interno del servidor');
+        res.status(500).json('Error interno del servidor');
     }
 })
 
